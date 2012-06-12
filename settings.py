@@ -241,13 +241,15 @@ INSTALLED_APPS = (
     "mezzanine.conf",
     "mezzanine.core",
     "mezzanine.generic",
-    "mezzanine.blog",
+    #"mezzanine.blog",
+    'blog_fork',
     "mezzanine.forms",
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
+    'django_extensions',
 )
 
 # List of processors used by RequestContext to populate the context.
@@ -328,6 +330,8 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "DB_PASS": "", # Live database password
 #     "ADMIN_PASS": "", # Live admin user password
 # }
+
+SOUTH_AUTO_FREEZE_APP = 'True'
 
 
 ##################

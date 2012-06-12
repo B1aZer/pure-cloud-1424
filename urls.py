@@ -2,6 +2,7 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 
+from mezzanine.conf import settings
 from mezzanine.core.views import direct_to_template
 
 
@@ -24,7 +25,7 @@ urlpatterns = patterns("",
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    #url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -51,7 +52,7 @@ urlpatterns = patterns("",
     # ``settings.py`` module, and delete the blog page object from the
     # page tree in the admin if it was installed.
 
-    # url("^$", "mezzanine.blog.views.blog_post_list", name="home"),
+    url("^$", "blog_fork.views.blog_post_list", name="home"),
 
     # MEZZANINE'S URLS
     # ----------------
@@ -66,6 +67,17 @@ urlpatterns = patterns("",
     ("^", include("mezzanine.urls")),
 
 )
+
+# Mezzanine's Blog app.
+BLOG_SLUG = settings.BLOG_SLUG
+blog_installed = "blog_fork" in settings.INSTALLED_APPS
+if blog_installed:
+    if BLOG_SLUG:
+        BLOG_SLUG += "/"
+    blog_patterns = patterns("",
+        ("^%s" % BLOG_SLUG, include("blog_fork.urls")),
+    )
+    urlpatterns += blog_patterns
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
