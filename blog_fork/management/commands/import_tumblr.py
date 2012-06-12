@@ -8,7 +8,7 @@ from django.core.management.base import CommandError
 from django.utils.html import strip_tags
 from django.utils.simplejson import loads
 
-from mezzanine.blog.management.base import BaseImporterCommand
+from blog_fork.management.base import BaseImporterCommand
 
 
 MAX_POSTS_PER_CALL = 50  # Max number of posts Tumblr API will return per call.

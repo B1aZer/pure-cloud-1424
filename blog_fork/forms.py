@@ -1,7 +1,7 @@
 
 from django import forms
 
-from mezzanine.blog.models import BlogPost
+from blog_fork.models import BlogPost
 
 
 # These fields need to be in the form, hidden, with default values,

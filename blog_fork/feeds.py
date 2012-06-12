@@ -9,7 +9,7 @@ from django.core.urlresolvers import reverse
 from django.utils.feedgenerator import Atom1Feed
 from django.utils.html import strip_tags
 
-from mezzanine.blog.models import BlogPost, BlogCategory
+from blog_fork.models import BlogPost, BlogCategory
 from mezzanine.pages.models import Page
 from mezzanine.conf import settings
 

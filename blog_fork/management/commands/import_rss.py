@@ -5,7 +5,7 @@ from time import timezone
 
 from dateutil import parser
 from feedparser import parse
-from mezzanine.blog.management.base import BaseImporterCommand
+from blog_fork.management.base import BaseImporterCommand
 
 
 class Command(BaseImporterCommand):

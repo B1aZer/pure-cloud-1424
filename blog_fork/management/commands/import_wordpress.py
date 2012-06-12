@@ -9,7 +9,7 @@ from xml.dom.minidom import parse
 from django.core.management.base import CommandError
 from django.utils.html import linebreaks
 
-from mezzanine.blog.management.base import BaseImporterCommand
+from blog_fork.management.base import BaseImporterCommand
 
 
 class Command(BaseImporterCommand):

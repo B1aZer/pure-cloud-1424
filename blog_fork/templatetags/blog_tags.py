@@ -4,8 +4,8 @@ from datetime import datetime
 from django.contrib.auth.models import User
 from django.db.models import Count
 
-from mezzanine.blog.forms import BlogPostForm
-from mezzanine.blog.models import BlogPost, BlogCategory
+from blog_fork.forms import BlogPostForm
+from blog_fork.models import BlogPost, BlogCategory
 from mezzanine import template
 
 
