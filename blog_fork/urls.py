@@ -3,7 +3,7 @@ from django.conf.urls.defaults import patterns, url
 
 
 # Blog patterns.
-urlpatterns = patterns("",
+urlpatterns = patterns("blog_fork.views",
     url("^feeds/(?P<format>.*)/$", "blog_post_feed", name="blog_post_feed"),
     url("^tag/(?P<tag>.*)/$", "blog_post_list", name="blog_post_list_tag"),
     url("^category/(?P<category>.*)/$", "blog_post_list",

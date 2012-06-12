@@ -53,6 +53,10 @@ urlpatterns = patterns("",
     # page tree in the admin if it was installed.
 
     #url("^$", "blog_fork.views.blog_post_list", name="home"),
+    #("^blog/(?P<slug>.*)/$", "blog_fork.views.blog_post_detail"),
+    #url("^blog/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
+    ("^blog/", include("blog_fork.urls")),
+
 
     # MEZZANINE'S URLS
     # ----------------
@@ -68,16 +72,7 @@ urlpatterns = patterns("",
 
 )
 
-# Mezzanine's Blog app.
-BLOG_SLUG = settings.BLOG_SLUG
-blog_installed = "blog_fork" in settings.INSTALLED_APPS
-if blog_installed:
-    if BLOG_SLUG:
-        BLOG_SLUG += "/"
-    blog_patterns = patterns("",
-        ("^%s" % BLOG_SLUG, include("blog_fork.urls")),
-    )
-    urlpatterns += blog_patterns
+
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
