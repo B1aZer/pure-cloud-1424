@@ -25,7 +25,7 @@ urlpatterns = patterns("",
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    #url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -52,7 +52,7 @@ urlpatterns = patterns("",
     # ``settings.py`` module, and delete the blog page object from the
     # page tree in the admin if it was installed.
 
-    #url("^$", "blog_fork.views.blog_post_list", name="home"),
+    url("^$", "blog_fork.views.blog_post_list", name="home"),
     #("^blog/(?P<slug>.*)/$", "blog_fork.views.blog_post_detail"),
     #url("^blog/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
     url("^poll/(?P<rate>.*)/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
