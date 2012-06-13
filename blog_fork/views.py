@@ -39,7 +39,12 @@ def blog_post_list(request, tag=None, year=None, month=None, username=None,
         templates.append(u"blog/blog_post_list_%s.html" %
                           unicode(category.slug))
     if rate is not None:
-        blog_posts = blog_posts.filter(rating_average__gte=rate)
+        if rate.isdigit():
+            blog_posts = blog_posts.filter(rating_average=rate)
+        if rate == 'upgrade':
+            blog_posts = blog_posts.filter(rating_average__gte=4)
+        if rate == 'downgrade':
+            blog_posts = blog_posts.filter(rating_average__lte=3)
     author = None
     if username is not None:
         author = get_object_or_404(User, username=username)

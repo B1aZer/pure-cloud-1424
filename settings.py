@@ -9,13 +9,13 @@
 
 # Controls the ordering and grouping of the admin menu.
 #
-#ADMIN_MENU_ORDER = (
-#     ("Content", ("pages.Page", "blog_fork.BlogPost",
-#        "generic.ThreadedComment", ("Media Library", "fb_browse"),
-#        )),
-#     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
-#     ("Users", ("auth.User", "auth.Group",)),
-# )
+ADMIN_MENU_ORDER = (
+     ("Content", ("pages.Page", "blog_fork.BlogPost",
+        "generic.ThreadedComment", ("Media Library", "fb_browse"),
+        )),
+     ("Site", ("sites.Site", "redirects.Redirect", "conf.Setting")),
+     ("Users", ("auth.User", "auth.Group",)),
+ )
 #
 # A three item sequence, each containing a sequence of template tags
 # used to render the admin dashboard.
@@ -230,6 +230,8 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
+    "classic",
+    #"mezzanine_html5boilerplate",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -330,8 +332,6 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "DB_PASS": "", # Live database password
 #     "ADMIN_PASS": "", # Live admin user password
 # }
-
-SOUTH_AUTO_FREEZE_APP = 'True'
 
 
 ##################

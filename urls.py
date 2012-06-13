@@ -55,7 +55,7 @@ urlpatterns = patterns("",
     #url("^$", "blog_fork.views.blog_post_list", name="home"),
     #("^blog/(?P<slug>.*)/$", "blog_fork.views.blog_post_detail"),
     #url("^blog/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
-    url("^upgrades/(?P<rate>.*)/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
+    url("^poll/(?P<rate>.*)/$", "blog_fork.views.blog_post_list", name="blog_post_list"),
     ("^blog/", include("blog_fork.urls")),
 
 
