@@ -1,0 +1,666 @@
+BEGIN TRANSACTION;
+CREATE TABLE "auth_permission" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "name" varchar(50) NOT NULL,
+    "content_type_id" integer NOT NULL,
+    "codename" varchar(100) NOT NULL,
+    UNIQUE ("content_type_id", "codename")
+);
+INSERT INTO "auth_permission" VALUES(1,'Can add group',2,'add_group');
+INSERT INTO "auth_permission" VALUES(2,'Can add permission',1,'add_permission');
+INSERT INTO "auth_permission" VALUES(3,'Can add user',3,'add_user');
+INSERT INTO "auth_permission" VALUES(4,'Can change group',2,'change_group');
+INSERT INTO "auth_permission" VALUES(5,'Can change permission',1,'change_permission');
+INSERT INTO "auth_permission" VALUES(6,'Can change user',3,'change_user');
+INSERT INTO "auth_permission" VALUES(7,'Can delete group',2,'delete_group');
+INSERT INTO "auth_permission" VALUES(8,'Can delete permission',1,'delete_permission');
+INSERT INTO "auth_permission" VALUES(9,'Can delete user',3,'delete_user');
+INSERT INTO "auth_permission" VALUES(10,'Can add content type',4,'add_contenttype');
+INSERT INTO "auth_permission" VALUES(11,'Can change content type',4,'change_contenttype');
+INSERT INTO "auth_permission" VALUES(12,'Can delete content type',4,'delete_contenttype');
+INSERT INTO "auth_permission" VALUES(13,'Can add redirect',5,'add_redirect');
+INSERT INTO "auth_permission" VALUES(14,'Can change redirect',5,'change_redirect');
+INSERT INTO "auth_permission" VALUES(15,'Can delete redirect',5,'delete_redirect');
+INSERT INTO "auth_permission" VALUES(16,'Can add session',6,'add_session');
+INSERT INTO "auth_permission" VALUES(17,'Can change session',6,'change_session');
+INSERT INTO "auth_permission" VALUES(18,'Can delete session',6,'delete_session');
+INSERT INTO "auth_permission" VALUES(19,'Can add site',7,'add_site');
+INSERT INTO "auth_permission" VALUES(20,'Can change site',7,'change_site');
+INSERT INTO "auth_permission" VALUES(21,'Can delete site',7,'delete_site');
+INSERT INTO "auth_permission" VALUES(22,'Can add Setting',8,'add_setting');
+INSERT INTO "auth_permission" VALUES(23,'Can change Setting',8,'change_setting');
+INSERT INTO "auth_permission" VALUES(24,'Can delete Setting',8,'delete_setting');
+INSERT INTO "auth_permission" VALUES(25,'Can add Comment',9,'add_threadedcomment');
+INSERT INTO "auth_permission" VALUES(26,'Can add Keyword',10,'add_keyword');
+INSERT INTO "auth_permission" VALUES(27,'Can add Rating',12,'add_rating');
+INSERT INTO "auth_permission" VALUES(28,'Can add assigned keyword',11,'add_assignedkeyword');
+INSERT INTO "auth_permission" VALUES(29,'Can change Comment',9,'change_threadedcomment');
+INSERT INTO "auth_permission" VALUES(30,'Can change Keyword',10,'change_keyword');
+INSERT INTO "auth_permission" VALUES(31,'Can change Rating',12,'change_rating');
+INSERT INTO "auth_permission" VALUES(32,'Can change assigned keyword',11,'change_assignedkeyword');
+INSERT INTO "auth_permission" VALUES(33,'Can delete Comment',9,'delete_threadedcomment');
+INSERT INTO "auth_permission" VALUES(34,'Can delete Keyword',10,'delete_keyword');
+INSERT INTO "auth_permission" VALUES(35,'Can delete Rating',12,'delete_rating');
+INSERT INTO "auth_permission" VALUES(36,'Can delete assigned keyword',11,'delete_assignedkeyword');
+INSERT INTO "auth_permission" VALUES(37,'Can add Blog Category',14,'add_blogcategory');
+INSERT INTO "auth_permission" VALUES(38,'Can add Blog post',13,'add_blogpost');
+INSERT INTO "auth_permission" VALUES(39,'Can change Blog Category',14,'change_blogcategory');
+INSERT INTO "auth_permission" VALUES(40,'Can change Blog post',13,'change_blogpost');
+INSERT INTO "auth_permission" VALUES(41,'Can delete Blog Category',14,'delete_blogcategory');
+INSERT INTO "auth_permission" VALUES(42,'Can delete Blog post',13,'delete_blogpost');
+INSERT INTO "auth_permission" VALUES(43,'Can add Field',16,'add_field');
+INSERT INTO "auth_permission" VALUES(44,'Can add Form',15,'add_form');
+INSERT INTO "auth_permission" VALUES(45,'Can add Form entry',17,'add_formentry');
+INSERT INTO "auth_permission" VALUES(46,'Can add Form field entry',18,'add_fieldentry');
+INSERT INTO "auth_permission" VALUES(47,'Can change Field',16,'change_field');
+INSERT INTO "auth_permission" VALUES(48,'Can change Form',15,'change_form');
+INSERT INTO "auth_permission" VALUES(49,'Can change Form entry',17,'change_formentry');
+INSERT INTO "auth_permission" VALUES(50,'Can change Form field entry',18,'change_fieldentry');
+INSERT INTO "auth_permission" VALUES(51,'Can delete Field',16,'delete_field');
+INSERT INTO "auth_permission" VALUES(52,'Can delete Form',15,'delete_form');
+INSERT INTO "auth_permission" VALUES(53,'Can delete Form entry',17,'delete_formentry');
+INSERT INTO "auth_permission" VALUES(54,'Can delete Form field entry',18,'delete_fieldentry');
+INSERT INTO "auth_permission" VALUES(55,'Can add Link',21,'add_link');
+INSERT INTO "auth_permission" VALUES(56,'Can add Page',19,'add_page');
+INSERT INTO "auth_permission" VALUES(57,'Can add Rich text page',20,'add_richtextpage');
+INSERT INTO "auth_permission" VALUES(58,'Can change Link',21,'change_link');
+INSERT INTO "auth_permission" VALUES(59,'Can change Page',19,'change_page');
+INSERT INTO "auth_permission" VALUES(60,'Can change Rich text page',20,'change_richtextpage');
+INSERT INTO "auth_permission" VALUES(61,'Can delete Link',21,'delete_link');
+INSERT INTO "auth_permission" VALUES(62,'Can delete Page',19,'delete_page');
+INSERT INTO "auth_permission" VALUES(63,'Can delete Rich text page',20,'delete_richtextpage');
+INSERT INTO "auth_permission" VALUES(64,'Can add Gallery',22,'add_gallery');
+INSERT INTO "auth_permission" VALUES(65,'Can add Image',23,'add_galleryimage');
+INSERT INTO "auth_permission" VALUES(66,'Can change Gallery',22,'change_gallery');
+INSERT INTO "auth_permission" VALUES(67,'Can change Image',23,'change_galleryimage');
+INSERT INTO "auth_permission" VALUES(68,'Can delete Gallery',22,'delete_gallery');
+INSERT INTO "auth_permission" VALUES(69,'Can delete Image',23,'delete_galleryimage');
+INSERT INTO "auth_permission" VALUES(70,'Can add Tweet',25,'add_tweet');
+INSERT INTO "auth_permission" VALUES(71,'Can add Twitter query',24,'add_query');
+INSERT INTO "auth_permission" VALUES(72,'Can change Tweet',25,'change_tweet');
+INSERT INTO "auth_permission" VALUES(73,'Can change Twitter query',24,'change_query');
+INSERT INTO "auth_permission" VALUES(74,'Can delete Tweet',25,'delete_tweet');
+INSERT INTO "auth_permission" VALUES(75,'Can delete Twitter query',24,'delete_query');
+INSERT INTO "auth_permission" VALUES(76,'Can add migration history',26,'add_migrationhistory');
+INSERT INTO "auth_permission" VALUES(77,'Can change migration history',26,'change_migrationhistory');
+INSERT INTO "auth_permission" VALUES(78,'Can delete migration history',26,'delete_migrationhistory');
+INSERT INTO "auth_permission" VALUES(79,'Can add Bookmark',29,'add_bookmark');
+INSERT INTO "auth_permission" VALUES(80,'Can add Bookmark Item',30,'add_bookmarkitem');
+INSERT INTO "auth_permission" VALUES(81,'Can add Help',31,'add_help');
+INSERT INTO "auth_permission" VALUES(82,'Can add Help Entry',32,'add_helpitem');
+INSERT INTO "auth_permission" VALUES(83,'Can add Navigation',27,'add_navigation');
+INSERT INTO "auth_permission" VALUES(84,'Can add Navigation Item',28,'add_navigationitem');
+INSERT INTO "auth_permission" VALUES(85,'Can change Bookmark',29,'change_bookmark');
+INSERT INTO "auth_permission" VALUES(86,'Can change Bookmark Item',30,'change_bookmarkitem');
+INSERT INTO "auth_permission" VALUES(87,'Can change Help',31,'change_help');
+INSERT INTO "auth_permission" VALUES(88,'Can change Help Entry',32,'change_helpitem');
+INSERT INTO "auth_permission" VALUES(89,'Can change Navigation',27,'change_navigation');
+INSERT INTO "auth_permission" VALUES(90,'Can change Navigation Item',28,'change_navigationitem');
+INSERT INTO "auth_permission" VALUES(91,'Can delete Bookmark',29,'delete_bookmark');
+INSERT INTO "auth_permission" VALUES(92,'Can delete Bookmark Item',30,'delete_bookmarkitem');
+INSERT INTO "auth_permission" VALUES(93,'Can delete Help',31,'delete_help');
+INSERT INTO "auth_permission" VALUES(94,'Can delete Help Entry',32,'delete_helpitem');
+INSERT INTO "auth_permission" VALUES(95,'Can delete Navigation',27,'delete_navigation');
+INSERT INTO "auth_permission" VALUES(96,'Can delete Navigation Item',28,'delete_navigationitem');
+INSERT INTO "auth_permission" VALUES(97,'Can add log entry',33,'add_logentry');
+INSERT INTO "auth_permission" VALUES(98,'Can change log entry',33,'change_logentry');
+INSERT INTO "auth_permission" VALUES(99,'Can delete log entry',33,'delete_logentry');
+INSERT INTO "auth_permission" VALUES(100,'Can add comment',34,'add_comment');
+INSERT INTO "auth_permission" VALUES(101,'Can add comment flag',35,'add_commentflag');
+INSERT INTO "auth_permission" VALUES(102,'Can change comment',34,'change_comment');
+INSERT INTO "auth_permission" VALUES(103,'Can change comment flag',35,'change_commentflag');
+INSERT INTO "auth_permission" VALUES(104,'Can delete comment',34,'delete_comment');
+INSERT INTO "auth_permission" VALUES(105,'Can delete comment flag',35,'delete_commentflag');
+INSERT INTO "auth_permission" VALUES(106,'Can moderate comments',34,'can_moderate');
+INSERT INTO "auth_permission" VALUES(107,'Can add Blog Category',37,'add_blogcategory');
+INSERT INTO "auth_permission" VALUES(108,'Can add Blog post',36,'add_blogpost');
+INSERT INTO "auth_permission" VALUES(109,'Can change Blog Category',37,'change_blogcategory');
+INSERT INTO "auth_permission" VALUES(110,'Can change Blog post',36,'change_blogpost');
+INSERT INTO "auth_permission" VALUES(111,'Can delete Blog Category',37,'delete_blogcategory');
+INSERT INTO "auth_permission" VALUES(112,'Can delete Blog post',36,'delete_blogpost');
+CREATE TABLE "auth_group_permissions" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "group_id" integer NOT NULL,
+    "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"),
+    UNIQUE ("group_id", "permission_id")
+);
+CREATE TABLE "auth_group" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "name" varchar(80) NOT NULL UNIQUE
+);
+CREATE TABLE "auth_user_user_permissions" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id" integer NOT NULL,
+    "permission_id" integer NOT NULL REFERENCES "auth_permission" ("id"),
+    UNIQUE ("user_id", "permission_id")
+);
+CREATE TABLE "auth_user_groups" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id" integer NOT NULL,
+    "group_id" integer NOT NULL REFERENCES "auth_group" ("id"),
+    UNIQUE ("user_id", "group_id")
+);
+CREATE TABLE "auth_user" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "username" varchar(30) NOT NULL UNIQUE,
+    "first_name" varchar(30) NOT NULL,
+    "last_name" varchar(30) NOT NULL,
+    "email" varchar(75) NOT NULL,
+    "password" varchar(128) NOT NULL,
+    "is_staff" bool NOT NULL,
+    "is_active" bool NOT NULL,
+    "is_superuser" bool NOT NULL,
+    "last_login" datetime NOT NULL,
+    "date_joined" datetime NOT NULL
+);
+INSERT INTO "auth_user" VALUES(1,'admin','','','example@example.com','pbkdf2_sha256$10000$UheqtfPiWTfu$yd8pT5LUeMq4hx0aTcFuXKp5hAUecSMQbtDkgWnP0c8=',1,1,1,'2012-06-13 08:08:50.052744','2012-06-13 08:08:07.492023');
+CREATE TABLE "django_content_type" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "name" varchar(100) NOT NULL,
+    "app_label" varchar(100) NOT NULL,
+    "model" varchar(100) NOT NULL,
+    UNIQUE ("app_label", "model")
+);
+INSERT INTO "django_content_type" VALUES(1,'permission','auth','permission');
+INSERT INTO "django_content_type" VALUES(2,'group','auth','group');
+INSERT INTO "django_content_type" VALUES(3,'user','auth','user');
+INSERT INTO "django_content_type" VALUES(4,'content type','contenttypes','contenttype');
+INSERT INTO "django_content_type" VALUES(5,'redirect','redirects','redirect');
+INSERT INTO "django_content_type" VALUES(6,'session','sessions','session');
+INSERT INTO "django_content_type" VALUES(7,'site','sites','site');
+INSERT INTO "django_content_type" VALUES(8,'Setting','conf','setting');
+INSERT INTO "django_content_type" VALUES(9,'Comment','generic','threadedcomment');
+INSERT INTO "django_content_type" VALUES(10,'Keyword','generic','keyword');
+INSERT INTO "django_content_type" VALUES(11,'assigned keyword','generic','assignedkeyword');
+INSERT INTO "django_content_type" VALUES(12,'Rating','generic','rating');
+INSERT INTO "django_content_type" VALUES(13,'Blog post','blog','blogpost');
+INSERT INTO "django_content_type" VALUES(14,'Blog Category','blog','blogcategory');
+INSERT INTO "django_content_type" VALUES(15,'Form','forms','form');
+INSERT INTO "django_content_type" VALUES(16,'Field','forms','field');
+INSERT INTO "django_content_type" VALUES(17,'Form entry','forms','formentry');
+INSERT INTO "django_content_type" VALUES(18,'Form field entry','forms','fieldentry');
+INSERT INTO "django_content_type" VALUES(19,'Page','pages','page');
+INSERT INTO "django_content_type" VALUES(20,'Rich text page','pages','richtextpage');
+INSERT INTO "django_content_type" VALUES(21,'Link','pages','link');
+INSERT INTO "django_content_type" VALUES(22,'Gallery','galleries','gallery');
+INSERT INTO "django_content_type" VALUES(23,'Image','galleries','galleryimage');
+INSERT INTO "django_content_type" VALUES(24,'Twitter query','twitter','query');
+INSERT INTO "django_content_type" VALUES(25,'Tweet','twitter','tweet');
+INSERT INTO "django_content_type" VALUES(26,'migration history','south','migrationhistory');
+INSERT INTO "django_content_type" VALUES(27,'Navigation','grappelli_safe','navigation');
+INSERT INTO "django_content_type" VALUES(28,'Navigation Item','grappelli_safe','navigationitem');
+INSERT INTO "django_content_type" VALUES(29,'Bookmark','grappelli_safe','bookmark');
+INSERT INTO "django_content_type" VALUES(30,'Bookmark Item','grappelli_safe','bookmarkitem');
+INSERT INTO "django_content_type" VALUES(31,'Help','grappelli_safe','help');
+INSERT INTO "django_content_type" VALUES(32,'Help Entry','grappelli_safe','helpitem');
+INSERT INTO "django_content_type" VALUES(33,'log entry','admin','logentry');
+INSERT INTO "django_content_type" VALUES(34,'comment','comments','comment');
+INSERT INTO "django_content_type" VALUES(35,'comment flag','comments','commentflag');
+INSERT INTO "django_content_type" VALUES(36,'Blog post','blog_fork','blogpost');
+INSERT INTO "django_content_type" VALUES(37,'Blog Category','blog_fork','blogcategory');
+CREATE TABLE "django_redirect" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "site_id" integer NOT NULL,
+    "old_path" varchar(200) NOT NULL,
+    "new_path" varchar(200) NOT NULL,
+    UNIQUE ("site_id", "old_path")
+);
+CREATE TABLE "django_session" (
+    "session_key" varchar(40) NOT NULL PRIMARY KEY,
+    "session_data" text NOT NULL,
+    "expire_date" datetime NOT NULL
+);
+INSERT INTO "django_session" VALUES('e1f34838370b02536ca460d8900426ca','NjRjM2Y2ZGU3OWM4YzA1MmU0MDhhYjAwN2I5NzNkYmZjZGQyNDEyNzqAAn1xAShVEl9hdXRoX3Vz
+ZXJfYmFja2VuZHECVS1tZXp6YW5pbmUuY29yZS5hdXRoX2JhY2tlbmRzLk1lenphbmluZUJhY2tl
+bmRxA1UNX2F1dGhfdXNlcl9pZHEESwF1Lg==
+','2012-06-27 08:08:50.092174');
+CREATE TABLE "django_site" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "domain" varchar(100) NOT NULL,
+    "name" varchar(50) NOT NULL
+);
+INSERT INTO "django_site" VALUES(1,'127.0.0.1:8000','Default');
+CREATE TABLE "conf_setting" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "name" varchar(50) NOT NULL,
+    "value" varchar(2000) NOT NULL
+);
+CREATE TABLE "generic_threadedcomment" (
+    "comment_ptr_id" integer NOT NULL PRIMARY KEY,
+    "by_author" bool NOT NULL,
+    "replied_to_id" integer
+);
+CREATE TABLE "generic_keyword" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000)
+);
+CREATE TABLE "generic_assignedkeyword" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "_order" integer,
+    "keyword_id" integer NOT NULL REFERENCES "generic_keyword" ("id"),
+    "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"),
+    "object_pk" integer NOT NULL
+);
+CREATE TABLE "generic_rating" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "value" integer NOT NULL,
+    "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"),
+    "object_pk" integer NOT NULL
+);
+CREATE TABLE "blog_blogpost_categories" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "blogpost_id" integer NOT NULL,
+    "blogcategory_id" integer NOT NULL,
+    UNIQUE ("blogpost_id", "blogcategory_id")
+);
+CREATE TABLE "blog_blogpost" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "comments_count" integer NOT NULL,
+    "keywords_string" varchar(500) NOT NULL,
+    "rating_count" integer NOT NULL,
+    "rating_average" real NOT NULL,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000),
+    "description" text NOT NULL,
+    "gen_description" bool NOT NULL,
+    "status" integer NOT NULL,
+    "publish_date" datetime,
+    "expiry_date" datetime,
+    "short_url" varchar(200),
+    "content" text NOT NULL,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    "allow_comments" bool NOT NULL,
+    "featured_image" varchar(255)
+);
+CREATE TABLE "blog_blogcategory" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000)
+);
+CREATE TABLE "forms_form" (
+    "page_ptr_id" integer NOT NULL PRIMARY KEY,
+    "content" text NOT NULL,
+    "button_text" varchar(50) NOT NULL,
+    "response" text NOT NULL,
+    "send_email" bool NOT NULL,
+    "email_from" varchar(75) NOT NULL,
+    "email_copies" varchar(200) NOT NULL,
+    "email_subject" varchar(200) NOT NULL,
+    "email_message" text NOT NULL
+);
+INSERT INTO "forms_form" VALUES(3,'<p>Fill in the form below to get in touch with us.</p>','Submit','<p>Thanks for getting in touch with us. We''ll get back to you as soon as possible.</p>',1,'','','','');
+CREATE TABLE "forms_field" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "_order" integer,
+    "form_id" integer NOT NULL REFERENCES "forms_form" ("page_ptr_id"),
+    "label" varchar(200) NOT NULL,
+    "field_type" integer NOT NULL,
+    "required" bool NOT NULL,
+    "visible" bool NOT NULL,
+    "choices" varchar(1000) NOT NULL,
+    "default" varchar(2000) NOT NULL,
+    "placeholder_text" varchar(100) NOT NULL,
+    "help_text" varchar(100) NOT NULL
+);
+INSERT INTO "forms_field" VALUES(1,0,3,'Name',1,1,1,'','','','');
+INSERT INTO "forms_field" VALUES(2,1,3,'Email',3,1,1,'','','','');
+INSERT INTO "forms_field" VALUES(3,2,3,'Subject',6,1,1,'Billing, Sales, Support','','','');
+INSERT INTO "forms_field" VALUES(4,3,3,'Message',2,1,1,'','','','');
+CREATE TABLE "forms_formentry" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "form_id" integer NOT NULL REFERENCES "forms_form" ("page_ptr_id"),
+    "entry_time" datetime NOT NULL
+);
+CREATE TABLE "forms_fieldentry" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "entry_id" integer NOT NULL REFERENCES "forms_formentry" ("id"),
+    "field_id" integer NOT NULL,
+    "value" varchar(2000)
+);
+CREATE TABLE "pages_page" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "keywords_string" varchar(500) NOT NULL,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000),
+    "description" text NOT NULL,
+    "gen_description" bool NOT NULL,
+    "status" integer NOT NULL,
+    "publish_date" datetime,
+    "expiry_date" datetime,
+    "short_url" varchar(200),
+    "_order" integer,
+    "parent_id" integer,
+    "in_navigation" bool NOT NULL,
+    "in_footer" bool NOT NULL,
+    "titles" varchar(1000),
+    "content_model" varchar(50),
+    "login_required" bool NOT NULL
+);
+INSERT INTO "pages_page" VALUES(1,'',1,'About','about','About us',1,2,NULL,NULL,NULL,0,NULL,1,1,'About','richtextpage',0);
+INSERT INTO "pages_page" VALUES(2,'',1,'Blog','blog','Blog',1,2,NULL,NULL,NULL,1,NULL,1,1,'Blog','richtextpage',0);
+INSERT INTO "pages_page" VALUES(3,'',1,'Contact','contact','Fill in the form below to get in touch with us.',1,2,NULL,NULL,NULL,3,NULL,1,1,'Contact','form',0);
+INSERT INTO "pages_page" VALUES(4,'',1,'Team','about/team','Team',1,2,NULL,NULL,NULL,0,1,1,1,'About / Team','richtextpage',0);
+INSERT INTO "pages_page" VALUES(5,'',1,'History','about/history','History',1,2,NULL,NULL,NULL,1,1,1,1,'About / History','richtextpage',0);
+INSERT INTO "pages_page" VALUES(6,'',1,'Legals','contact/legals','Legals',1,2,NULL,NULL,NULL,0,3,1,1,'Contact / Legals','richtextpage',0);
+INSERT INTO "pages_page" VALUES(8,'',1,'Gallery','gallery','A demo gallery of cities from around the world.',1,2,'2012-06-13 08:08:07.995223',NULL,NULL,2,NULL,1,1,'Gallery','gallery',0);
+INSERT INTO "pages_page" VALUES(9,'',1,'Upgrades','upgrades','Upgrades',1,2,NULL,NULL,NULL,0,NULL,1,0,'Upgrades','richtextpage',0);
+INSERT INTO "pages_page" VALUES(10,'',1,'Rating 5','upgrades/5/','Rate 5',1,2,NULL,NULL,NULL,0,9,1,0,'Upgrades / Rate 5','richtextpage',0);
+INSERT INTO "pages_page" VALUES(11,'',1,'Rating 4','upgrades/4/','Rate 4',1,2,NULL,NULL,NULL,1,9,1,0,'Upgrades / Rate 4','richtextpage',0);
+CREATE TABLE "pages_richtextpage" (
+    "page_ptr_id" integer NOT NULL PRIMARY KEY REFERENCES "pages_page" ("id"),
+    "content" text NOT NULL
+);
+INSERT INTO "pages_richtextpage" VALUES(1,'<p>About us</p>');
+INSERT INTO "pages_richtextpage" VALUES(2,'<p>Blog</p>');
+INSERT INTO "pages_richtextpage" VALUES(4,'<p>Team</p>');
+INSERT INTO "pages_richtextpage" VALUES(5,'<p>History</p>');
+INSERT INTO "pages_richtextpage" VALUES(6,'<p>Legals</p>');
+INSERT INTO "pages_richtextpage" VALUES(7,'<p>Upgrades</p>');
+CREATE TABLE "pages_link" (
+    "page_ptr_id" integer NOT NULL PRIMARY KEY REFERENCES "pages_page" ("id")
+);
+CREATE TABLE "galleries_gallery" (
+    "page_ptr_id" integer NOT NULL PRIMARY KEY REFERENCES "pages_page" ("id"),
+    "content" text NOT NULL,
+    "zip_import" varchar(100) NOT NULL
+);
+INSERT INTO "galleries_gallery" VALUES(8,'<p>A demo gallery of cities from around the world.</p>','');
+CREATE TABLE "galleries_galleryimage" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "_order" integer,
+    "gallery_id" integer NOT NULL REFERENCES "galleries_gallery" ("page_ptr_id"),
+    "file" varchar(200) NOT NULL,
+    "description" varchar(1000) NOT NULL
+);
+INSERT INTO "galleries_galleryimage" VALUES(1,0,8,'uploads/gallery/Amsterdam, Holland_26.jpg','Amsterdam  Holland 26');
+INSERT INTO "galleries_galleryimage" VALUES(2,1,8,'uploads/gallery/Asturias, Brazil_26.jpg','Asturias  Brazil 26');
+INSERT INTO "galleries_galleryimage" VALUES(3,2,8,'uploads/gallery/Athens, Greece_26.jpg','Athens  Greece 26');
+INSERT INTO "galleries_galleryimage" VALUES(4,3,8,'uploads/gallery/Austin, USA_26.jpg','Austin  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(5,4,8,'uploads/gallery/Ávila, Spain_26.jpg','Ávila  Spain 26');
+INSERT INTO "galleries_galleryimage" VALUES(6,5,8,'uploads/gallery/Bangkok, Thailand_26.jpg','Bangkok  Thailand 26');
+INSERT INTO "galleries_galleryimage" VALUES(7,6,8,'uploads/gallery/Berlin, Germany_26.jpg','Berlin  Germany 26');
+INSERT INTO "galleries_galleryimage" VALUES(8,7,8,'uploads/gallery/Boston, USA_26.jpg','Boston  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(9,8,8,'uploads/gallery/Brisbane, Australia_26.jpg','Brisbane  Australia 26');
+INSERT INTO "galleries_galleryimage" VALUES(10,9,8,'uploads/gallery/Bruxelles, Belgium_26.jpg','Bruxelles  Belgium 26');
+INSERT INTO "galleries_galleryimage" VALUES(11,10,8,'uploads/gallery/Buenos Aires, Argentina_26.jpg','Buenos Aires  Argentina 26');
+INSERT INTO "galleries_galleryimage" VALUES(12,11,8,'uploads/gallery/Cairo, Egypt_26.jpg','Cairo  Egypt 26');
+INSERT INTO "galleries_galleryimage" VALUES(13,12,8,'uploads/gallery/Chicage, USA_26.jpg','Chicage  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(14,13,8,'uploads/gallery/City of Singapore, Singapore_26.jpg','City Of Singapore  Singapore 26');
+INSERT INTO "galleries_galleryimage" VALUES(15,14,8,'uploads/gallery/Dallas, USA_26.jpg','Dallas  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(16,15,8,'uploads/gallery/Denver, USA_26.jpg','Denver  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(17,16,8,'uploads/gallery/Dublin, Ireland_26.jpg','Dublin  Ireland 26');
+INSERT INTO "galleries_galleryimage" VALUES(18,17,8,'uploads/gallery/Düsseldorf, Germany_26.jpg','Düsseldorf  Germany 26');
+INSERT INTO "galleries_galleryimage" VALUES(19,18,8,'uploads/gallery/Frankfurt, Germany_26.jpg','Frankfurt  Germany 26');
+INSERT INTO "galleries_galleryimage" VALUES(20,19,8,'uploads/gallery/Geneva, Switzerland_26.jpg','Geneva  Switzerland 26');
+INSERT INTO "galleries_galleryimage" VALUES(21,20,8,'uploads/gallery/Inverness, Scotland_26.jpg','Inverness  Scotland 26');
+INSERT INTO "galleries_galleryimage" VALUES(22,21,8,'uploads/gallery/Lisbon, Portugal_26.jpg','Lisbon  Portugal 26');
+INSERT INTO "galleries_galleryimage" VALUES(23,22,8,'uploads/gallery/Liverpool, England_26.jpg','Liverpool  England 26');
+INSERT INTO "galleries_galleryimage" VALUES(24,23,8,'uploads/gallery/London, England_26.jpg','London  England 26');
+INSERT INTO "galleries_galleryimage" VALUES(25,24,8,'uploads/gallery/Long Beach, USA_26.jpg','Long Beach  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(26,25,8,'uploads/gallery/Louisville, USA_26.jpg','Louisville  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(27,26,8,'uploads/gallery/Marrakech, Morocco_26.jpg','Marrakech  Morocco 26');
+INSERT INTO "galleries_galleryimage" VALUES(28,27,8,'uploads/gallery/Miami, USA_26.jpg','Miami  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(29,28,8,'uploads/gallery/Monaco, Monaco_26.jpg','Monaco  Monaco 26');
+INSERT INTO "galleries_galleryimage" VALUES(30,29,8,'uploads/gallery/Moscow, Russia_26.jpg','Moscow  Russia 26');
+INSERT INTO "galleries_galleryimage" VALUES(31,30,8,'uploads/gallery/Naples, Italy_26.jpg','Naples  Italy 26');
+INSERT INTO "galleries_galleryimage" VALUES(32,31,8,'uploads/gallery/Palermo, Italy_26.jpg','Palermo  Italy 26');
+INSERT INTO "galleries_galleryimage" VALUES(33,32,8,'uploads/gallery/Paris, France_26.jpg','Paris  France 26');
+INSERT INTO "galleries_galleryimage" VALUES(34,33,8,'uploads/gallery/Reykjavik, Iceland_26.jpg','Reykjavik  Iceland 26');
+INSERT INTO "galleries_galleryimage" VALUES(35,34,8,'uploads/gallery/Rome, Italy_26.jpg','Rome  Italy 26');
+INSERT INTO "galleries_galleryimage" VALUES(36,35,8,'uploads/gallery/San Francisco, USA_26.jpg','San Francisco  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(37,36,8,'uploads/gallery/Santiago, Chile_26.jpg','Santiago  Chile 26');
+INSERT INTO "galleries_galleryimage" VALUES(38,37,8,'uploads/gallery/Seattle, USA_26.jpg','Seattle  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(39,38,8,'uploads/gallery/Stockholm, Sweden_26.jpg','Stockholm  Sweden 26');
+INSERT INTO "galleries_galleryimage" VALUES(40,39,8,'uploads/gallery/Sydney, Australia_26.jpg','Sydney  Australia 26');
+INSERT INTO "galleries_galleryimage" VALUES(41,40,8,'uploads/gallery/Tempe Town Lake, USA_26.jpg','Tempe Town Lake  USA 26');
+INSERT INTO "galleries_galleryimage" VALUES(42,41,8,'uploads/gallery/Tokyo, Japan_26.jpg','Tokyo  Japan 26');
+INSERT INTO "galleries_galleryimage" VALUES(43,42,8,'uploads/gallery/Toronto, Canada_26.jpg','Toronto  Canada 26');
+INSERT INTO "galleries_galleryimage" VALUES(44,43,8,'uploads/gallery/Vancouver, Canada_26.jpg','Vancouver  Canada 26');
+INSERT INTO "galleries_galleryimage" VALUES(45,44,8,'uploads/gallery/Venice, Italy_26.jpg','Venice  Italy 26');
+INSERT INTO "galleries_galleryimage" VALUES(46,45,8,'uploads/gallery/Vienna, Austria_26.jpg','Vienna  Austria 26');
+INSERT INTO "galleries_galleryimage" VALUES(47,46,8,'uploads/gallery/Warsaw, Poland_26.jpg','Warsaw  Poland 26');
+INSERT INTO "galleries_galleryimage" VALUES(48,47,8,'uploads/gallery/Yokohama, Japan_26.jpg','Yokohama  Japan 26');
+INSERT INTO "galleries_galleryimage" VALUES(49,48,8,'uploads/gallery/York, England_26.jpg','York  England 26');
+CREATE TABLE "twitter_query" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "type" varchar(10) NOT NULL,
+    "value" varchar(140) NOT NULL,
+    "interested" bool NOT NULL
+);
+CREATE TABLE "twitter_tweet" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "remote_id" varchar(50) NOT NULL,
+    "created_at" datetime,
+    "text" text,
+    "profile_image_url" varchar(200),
+    "user_name" varchar(100),
+    "full_name" varchar(100),
+    "retweeter_profile_image_url" varchar(200),
+    "retweeter_user_name" varchar(100),
+    "retweeter_full_name" varchar(100),
+    "query_id" integer NOT NULL REFERENCES "twitter_query" ("id")
+);
+CREATE TABLE "south_migrationhistory" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "app_name" varchar(255) NOT NULL,
+    "migration" varchar(255) NOT NULL,
+    "applied" datetime NOT NULL
+);
+INSERT INTO "south_migrationhistory" VALUES(1,'conf','0001_initial','2012-06-13 08:08:09.616356');
+INSERT INTO "south_migrationhistory" VALUES(2,'conf','0002_auto__add_field_setting_site','2012-06-13 08:08:09.619880');
+INSERT INTO "south_migrationhistory" VALUES(3,'conf','0003_update_site_setting','2012-06-13 08:08:09.623006');
+INSERT INTO "south_migrationhistory" VALUES(4,'conf','0004_ssl_account_settings_rename','2012-06-13 08:08:09.626211');
+INSERT INTO "south_migrationhistory" VALUES(5,'core','0001_initial','2012-06-13 08:08:09.633226');
+INSERT INTO "south_migrationhistory" VALUES(6,'pages','0001_initial','2012-06-13 08:08:09.636567');
+INSERT INTO "south_migrationhistory" VALUES(7,'pages','0002_auto__del_field_page__keywords__add_field_page_keywords_string__chg_fi','2012-06-13 08:08:09.640285');
+INSERT INTO "south_migrationhistory" VALUES(8,'blog','0001_initial','2012-06-13 08:08:09.643568');
+INSERT INTO "south_migrationhistory" VALUES(9,'blog','0002_auto','2012-06-13 08:08:09.647715');
+INSERT INTO "south_migrationhistory" VALUES(10,'blog','0003_categories','2012-06-13 08:08:09.651084');
+INSERT INTO "south_migrationhistory" VALUES(11,'blog','0004_auto__del_field_blogpost_category','2012-06-13 08:08:09.654474');
+INSERT INTO "south_migrationhistory" VALUES(12,'blog','0005_auto__del_comment__add_field_blogpost_comments_count__chg_field_blogpo','2012-06-13 08:08:09.657880');
+INSERT INTO "south_migrationhistory" VALUES(13,'blog','0006_auto__del_field_blogpost__keywords__add_field_blogpost_keywords_string','2012-06-13 08:08:09.661403');
+INSERT INTO "south_migrationhistory" VALUES(14,'core','0002_auto__del_keyword','2012-06-13 08:08:09.664681');
+INSERT INTO "south_migrationhistory" VALUES(15,'generic','0001_initial','2012-06-13 08:08:09.673637');
+INSERT INTO "south_migrationhistory" VALUES(16,'generic','0002_auto__add_keyword__add_assignedkeyword','2012-06-13 08:08:09.676986');
+INSERT INTO "south_migrationhistory" VALUES(17,'generic','0003_auto__add_rating','2012-06-13 08:08:09.680424');
+INSERT INTO "south_migrationhistory" VALUES(18,'generic','0004_auto__chg_field_rating_object_pk__chg_field_assignedkeyword_object_pk','2012-06-13 08:08:09.690989');
+INSERT INTO "south_migrationhistory" VALUES(19,'generic','0005_keyword_site','2012-06-13 08:08:09.698860');
+INSERT INTO "south_migrationhistory" VALUES(20,'generic','0006_move_keywords','2012-06-13 08:08:09.702879');
+INSERT INTO "south_migrationhistory" VALUES(21,'generic','0007_auto__add_field_assignedkeyword__order','2012-06-13 08:08:09.706845');
+INSERT INTO "south_migrationhistory" VALUES(22,'generic','0008_set_keyword_order','2012-06-13 08:08:09.710263');
+INSERT INTO "south_migrationhistory" VALUES(23,'generic','0009_auto__chg_field_keyword_title__chg_field_keyword_slug','2012-06-13 08:08:09.714144');
+INSERT INTO "south_migrationhistory" VALUES(24,'generic','0009_auto__del_field_threadedcomment_email_hash','2012-06-13 08:08:09.717625');
+INSERT INTO "south_migrationhistory" VALUES(25,'generic','0010_auto__chg_field_keyword_slug__chg_field_keyword_title','2012-06-13 08:08:09.720928');
+INSERT INTO "south_migrationhistory" VALUES(26,'blog','0007_auto__add_field_blogpost_site','2012-06-13 08:08:09.732440');
+INSERT INTO "south_migrationhistory" VALUES(27,'blog','0008_auto__add_field_blogpost_rating_average__add_field_blogpost_rating_cou','2012-06-13 08:08:09.735805');
+INSERT INTO "south_migrationhistory" VALUES(28,'blog','0009_auto__chg_field_blogpost_content','2012-06-13 08:08:09.741434');
+INSERT INTO "south_migrationhistory" VALUES(29,'blog','0010_category_site_allow_comments','2012-06-13 08:08:09.746339');
+INSERT INTO "south_migrationhistory" VALUES(30,'blog','0011_comment_site_data','2012-06-13 08:08:09.749970');
+INSERT INTO "south_migrationhistory" VALUES(31,'blog','0012_auto__add_field_blogpost_featured_image','2012-06-13 08:08:09.753780');
+INSERT INTO "south_migrationhistory" VALUES(32,'blog','0013_auto__chg_field_blogpost_featured_image','2012-06-13 08:08:09.762791');
+INSERT INTO "south_migrationhistory" VALUES(33,'blog','0014_auto__add_field_blogpost_gen_description','2012-06-13 08:08:09.766209');
+INSERT INTO "south_migrationhistory" VALUES(34,'blog','0015_auto__chg_field_blogcategory_title__chg_field_blogcategory_slug__chg_f','2012-06-13 08:08:09.772489');
+INSERT INTO "south_migrationhistory" VALUES(35,'forms','0001_initial','2012-06-13 08:08:09.784380');
+INSERT INTO "south_migrationhistory" VALUES(36,'forms','0002_auto__add_field_field_placeholder_text','2012-06-13 08:08:09.787703');
+INSERT INTO "south_migrationhistory" VALUES(37,'forms','0003_auto__chg_field_field_field_type','2012-06-13 08:08:09.790941');
+INSERT INTO "south_migrationhistory" VALUES(38,'forms','0004_auto__chg_field_form_response__chg_field_form_content','2012-06-13 08:08:09.794321');
+INSERT INTO "south_migrationhistory" VALUES(39,'forms','0005_auto__chg_field_fieldentry_value','2012-06-13 08:08:09.798092');
+INSERT INTO "south_migrationhistory" VALUES(40,'pages','0003_auto__add_field_page_site','2012-06-13 08:08:09.809386');
+INSERT INTO "south_migrationhistory" VALUES(41,'pages','0004_auto__del_contentpage__add_richtextpage','2012-06-13 08:08:09.812723');
+INSERT INTO "south_migrationhistory" VALUES(42,'pages','0005_rename_contentpage','2012-06-13 08:08:09.816071');
+INSERT INTO "south_migrationhistory" VALUES(43,'pages','0006_auto__add_field_page_gen_description','2012-06-13 08:08:09.819218');
+INSERT INTO "south_migrationhistory" VALUES(44,'pages','0007_auto__chg_field_page_slug__chg_field_page_title','2012-06-13 08:08:09.823224');
+INSERT INTO "south_migrationhistory" VALUES(45,'pages','0008_auto__add_link','2012-06-13 08:08:09.826452');
+INSERT INTO "south_migrationhistory" VALUES(46,'galleries','0001_initial','2012-06-13 08:08:09.837494');
+INSERT INTO "south_migrationhistory" VALUES(47,'twitter','0001_initial','2012-06-13 08:08:09.851332');
+INSERT INTO "south_migrationhistory" VALUES(48,'twitter','0002_auto__chg_field_query_value','2012-06-13 08:08:09.854807');
+CREATE TABLE "grappelli_safe_navigation" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "title" varchar(30) NOT NULL,
+    "order" integer unsigned NOT NULL
+);
+CREATE TABLE "grappelli_safe_navigationitem_users" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "navigationitem_id" integer NOT NULL,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    UNIQUE ("navigationitem_id", "user_id")
+);
+CREATE TABLE "grappelli_safe_navigationitem_groups" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "navigationitem_id" integer NOT NULL,
+    "group_id" integer NOT NULL REFERENCES "auth_group" ("id"),
+    UNIQUE ("navigationitem_id", "group_id")
+);
+CREATE TABLE "grappelli_safe_navigationitem" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "navigation_id" integer NOT NULL REFERENCES "grappelli_safe_navigation" ("id"),
+    "title" varchar(30) NOT NULL,
+    "link" varchar(200) NOT NULL,
+    "category" varchar(1) NOT NULL,
+    "order" integer unsigned NOT NULL
+);
+CREATE TABLE "grappelli_safe_bookmark" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id")
+);
+CREATE TABLE "grappelli_safe_bookmarkitem" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "bookmark_id" integer NOT NULL REFERENCES "grappelli_safe_bookmark" ("id"),
+    "title" varchar(80) NOT NULL,
+    "link" varchar(200) NOT NULL,
+    "order" integer unsigned NOT NULL
+);
+CREATE TABLE "grappelli_safe_help" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "title" varchar(50) NOT NULL,
+    "order" integer unsigned NOT NULL
+);
+CREATE TABLE "grappelli_safe_helpitem" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "help_id" integer NOT NULL REFERENCES "grappelli_safe_help" ("id"),
+    "title" varchar(200) NOT NULL,
+    "link" varchar(200) NOT NULL,
+    "body" text NOT NULL,
+    "order" integer unsigned NOT NULL
+);
+CREATE TABLE "django_admin_log" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "action_time" datetime NOT NULL,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    "content_type_id" integer REFERENCES "django_content_type" ("id"),
+    "object_id" text,
+    "object_repr" varchar(200) NOT NULL,
+    "action_flag" smallint unsigned NOT NULL,
+    "change_message" text NOT NULL
+);
+CREATE TABLE "django_comments" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "content_type_id" integer NOT NULL REFERENCES "django_content_type" ("id"),
+    "object_pk" text NOT NULL,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "user_id" integer REFERENCES "auth_user" ("id"),
+    "user_name" varchar(50) NOT NULL,
+    "user_email" varchar(75) NOT NULL,
+    "user_url" varchar(200) NOT NULL,
+    "comment" text NOT NULL,
+    "submit_date" datetime NOT NULL,
+    "ip_address" char(15),
+    "is_public" bool NOT NULL,
+    "is_removed" bool NOT NULL
+);
+CREATE TABLE "django_comment_flags" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    "comment_id" integer NOT NULL REFERENCES "django_comments" ("id"),
+    "flag" varchar(30) NOT NULL,
+    "flag_date" datetime NOT NULL,
+    UNIQUE ("user_id", "comment_id", "flag")
+);
+CREATE TABLE "blog_fork_blogpost_categories" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "blogpost_id" integer NOT NULL,
+    "blogcategory_id" integer NOT NULL,
+    UNIQUE ("blogpost_id", "blogcategory_id")
+);
+CREATE TABLE "blog_fork_blogpost" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "comments_count" integer NOT NULL,
+    "keywords_string" varchar(500) NOT NULL,
+    "rating_count" integer NOT NULL,
+    "rating_average" real NOT NULL,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000),
+    "description" text NOT NULL,
+    "gen_description" bool NOT NULL,
+    "status" integer NOT NULL,
+    "publish_date" datetime,
+    "expiry_date" datetime,
+    "short_url" varchar(200),
+    "content" text NOT NULL,
+    "user_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    "allow_comments" bool NOT NULL,
+    "featured_image" varchar(255)
+);
+CREATE TABLE "blog_fork_blogcategory" (
+    "id" integer NOT NULL PRIMARY KEY,
+    "site_id" integer NOT NULL REFERENCES "django_site" ("id"),
+    "title" varchar(500) NOT NULL,
+    "slug" varchar(2000)
+);
+CREATE INDEX "auth_permission_e4470c6e" ON "auth_permission" ("content_type_id");
+CREATE INDEX "auth_group_permissions_bda51c3c" ON "auth_group_permissions" ("group_id");
+CREATE INDEX "auth_group_permissions_1e014c8f" ON "auth_group_permissions" ("permission_id");
+CREATE INDEX "auth_user_user_permissions_fbfc09f1" ON "auth_user_user_permissions" ("user_id");
+CREATE INDEX "auth_user_user_permissions_1e014c8f" ON "auth_user_user_permissions" ("permission_id");
+CREATE INDEX "auth_user_groups_fbfc09f1" ON "auth_user_groups" ("user_id");
+CREATE INDEX "auth_user_groups_bda51c3c" ON "auth_user_groups" ("group_id");
+CREATE INDEX "django_redirect_6223029" ON "django_redirect" ("site_id");
+CREATE INDEX "django_redirect_ae93dc10" ON "django_redirect" ("old_path");
+CREATE INDEX "django_session_c25c2c28" ON "django_session" ("expire_date");
+CREATE INDEX "conf_setting_6223029" ON "conf_setting" ("site_id");
+CREATE INDEX "generic_threadedcomment_b0276c83" ON "generic_threadedcomment" ("replied_to_id");
+CREATE INDEX "generic_keyword_6223029" ON "generic_keyword" ("site_id");
+CREATE INDEX "generic_assignedkeyword_a6434082" ON "generic_assignedkeyword" ("keyword_id");
+CREATE INDEX "generic_assignedkeyword_e4470c6e" ON "generic_assignedkeyword" ("content_type_id");
+CREATE INDEX "generic_rating_e4470c6e" ON "generic_rating" ("content_type_id");
+CREATE INDEX "blog_blogpost_categories_3b7e3252" ON "blog_blogpost_categories" ("blogpost_id");
+CREATE INDEX "blog_blogpost_categories_ef20ce5c" ON "blog_blogpost_categories" ("blogcategory_id");
+CREATE INDEX "blog_blogpost_6223029" ON "blog_blogpost" ("site_id");
+CREATE INDEX "blog_blogpost_fbfc09f1" ON "blog_blogpost" ("user_id");
+CREATE INDEX "blog_blogcategory_6223029" ON "blog_blogcategory" ("site_id");
+CREATE INDEX "forms_field_1d0aabf2" ON "forms_field" ("form_id");
+CREATE INDEX "forms_formentry_1d0aabf2" ON "forms_formentry" ("form_id");
+CREATE INDEX "forms_fieldentry_38a62041" ON "forms_fieldentry" ("entry_id");
+CREATE INDEX "pages_page_6223029" ON "pages_page" ("site_id");
+CREATE INDEX "pages_page_63f17a16" ON "pages_page" ("parent_id");
+CREATE INDEX "galleries_galleryimage_cb7c733d" ON "galleries_galleryimage" ("gallery_id");
+CREATE INDEX "twitter_tweet_d1fd0261" ON "twitter_tweet" ("query_id");
+CREATE INDEX "grappelli_safe_navigationitem_users_77063c1" ON "grappelli_safe_navigationitem_users" ("navigationitem_id");
+CREATE INDEX "grappelli_safe_navigationitem_users_fbfc09f1" ON "grappelli_safe_navigationitem_users" ("user_id");
+CREATE INDEX "grappelli_safe_navigationitem_groups_77063c1" ON "grappelli_safe_navigationitem_groups" ("navigationitem_id");
+CREATE INDEX "grappelli_safe_navigationitem_groups_bda51c3c" ON "grappelli_safe_navigationitem_groups" ("group_id");
+CREATE INDEX "grappelli_safe_navigationitem_f8e4a364" ON "grappelli_safe_navigationitem" ("navigation_id");
+CREATE INDEX "grappelli_safe_bookmark_fbfc09f1" ON "grappelli_safe_bookmark" ("user_id");
+CREATE INDEX "grappelli_safe_bookmarkitem_424927c4" ON "grappelli_safe_bookmarkitem" ("bookmark_id");
+CREATE INDEX "grappelli_safe_helpitem_b4fcaabf" ON "grappelli_safe_helpitem" ("help_id");
+CREATE INDEX "django_admin_log_fbfc09f1" ON "django_admin_log" ("user_id");
+CREATE INDEX "django_admin_log_e4470c6e" ON "django_admin_log" ("content_type_id");
+CREATE INDEX "django_comments_e4470c6e" ON "django_comments" ("content_type_id");
+CREATE INDEX "django_comments_6223029" ON "django_comments" ("site_id");
+CREATE INDEX "django_comments_fbfc09f1" ON "django_comments" ("user_id");
+CREATE INDEX "django_comment_flags_fbfc09f1" ON "django_comment_flags" ("user_id");
+CREATE INDEX "django_comment_flags_9b3dc754" ON "django_comment_flags" ("comment_id");
+CREATE INDEX "django_comment_flags_111c90f9" ON "django_comment_flags" ("flag");
+CREATE INDEX "blog_fork_blogpost_categories_3b7e3252" ON "blog_fork_blogpost_categories" ("blogpost_id");
+CREATE INDEX "blog_fork_blogpost_categories_ef20ce5c" ON "blog_fork_blogpost_categories" ("blogcategory_id");
+CREATE INDEX "blog_fork_blogpost_6223029" ON "blog_fork_blogpost" ("site_id");
+CREATE INDEX "blog_fork_blogpost_fbfc09f1" ON "blog_fork_blogpost" ("user_id");
+CREATE INDEX "blog_fork_blogcategory_6223029" ON "blog_fork_blogcategory" ("site_id");
+COMMIT;

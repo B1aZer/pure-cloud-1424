@@ -20,7 +20,9 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     allow_comments = models.BooleanField(verbose_name=_("Allow comments"),
                                          default=True)
     comments = CommentsField(verbose_name=_("Comments"))
-    #hello = models.CharField(max_length=200)
+    #poll = models.IntegerField(default=0)
+    #show_poll = models.BooleanField(verbose_name=_("Show Poll"),
+    #                                     default=True)
     rating = RatingField(verbose_name=_("Rating"))
     featured_image = FileField(verbose_name=_("Featured Image"), null=True,
                                upload_to="blog", max_length=255, blank=True)
@@ -57,3 +59,7 @@ class BlogCategory(Slugged):
     @models.permalink
     def get_absolute_url(self):
         return ("blog_post_list_category", (), {"slug": self.slug})
+
+
+
+

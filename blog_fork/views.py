@@ -7,16 +7,15 @@ from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
 from django import VERSION
 
-from blog_fork.models import BlogPost, BlogCategory
-from blog_fork.feeds import PostsRSS, PostsAtom
+from .models import BlogPost, BlogCategory
+from .feeds import PostsRSS, PostsAtom
 from mezzanine.conf import settings
 from mezzanine.generic.models import AssignedKeyword, Keyword
 from mezzanine.utils.views import render, paginate
-import logging
 
 
 def blog_post_list(request, tag=None, year=None, month=None, username=None,
-                   category=None, template="blog/blog_post_list.html"):
+                   category=None, rate=None, template="blog/blog_post_list.html"):
     """
     Display a list of blog posts that are filtered by tag, year, month,
     author or category. Custom templates are checked for using the name
@@ -39,6 +38,8 @@ def blog_post_list(request, tag=None, year=None, month=None, username=None,
         blog_posts = blog_posts.filter(categories=category)
         templates.append(u"blog/blog_post_list_%s.html" %
                           unicode(category.slug))
+    if rate is not None:
+        blog_posts = blog_posts.filter(rating_average__gte=rate)
     author = None
     if username is not None:
         author = get_object_or_404(User, username=username)
@@ -100,7 +101,6 @@ def blog_post_detail(request, slug, year=None, month=None,
     ``blog/blog_post_detail_XXX.html`` where ``XXX`` is the blog
     posts's slug.
     """
-    logging.debug('we here')
     blog_posts = BlogPost.objects.published(for_user=request.user)
     blog_post = get_object_or_404(blog_posts, slug=slug)
     context = {"blog_post": blog_post}

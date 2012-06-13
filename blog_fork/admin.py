@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from django.contrib import admin
 
-from blog_fork.models import BlogPost, BlogCategory
+from .models import BlogPost, BlogCategory
 from mezzanine.conf import settings
 from mezzanine.core.admin import DisplayableAdmin, OwnableAdmin
 
