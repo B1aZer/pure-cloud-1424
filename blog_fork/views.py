@@ -135,6 +135,7 @@ def blog_post_feed(request, format):
 
 
 def polling(request, slug=None):
+    import pdb; pdb.set_trace();
     blog_posts = BlogPost.objects.published(for_user=request.user)
     blog_post = blog_posts.get(slug=slug)
     url = request.build_absolute_uri()
@@ -146,12 +147,6 @@ def polling(request, slug=None):
         rating_value = request.GET["value"]
     except (KeyError, ValueError):
         return HttpResponseRedirect(url)
-    if rating_value == 'up':
-        blog_post.upvote +=1
-        blog_post.save()
-    if rating_value == 'down':
-        blog_post.downvote +=1
-        blog_post.save()
     ratings = request.COOKIES.get("poll-rating", "").split(",")
     rating_string = "%s.%s" % ('blogpost',
                                blog_post.id)
@@ -159,6 +154,12 @@ def polling(request, slug=None):
     if rating_string in ratings:
         # Already rated so abort.
         return HttpResponseRedirect(url)
+    if rating_value == 'up':
+        blog_post.upvote +=1
+        blog_post.save()
+    if rating_value == 'down':
+        blog_post.downvote +=1
+        blog_post.save()
     response = HttpResponseRedirect(url)
     ratings.append(rating_string)
     expiry = 60 * 60 * 24 * 365
