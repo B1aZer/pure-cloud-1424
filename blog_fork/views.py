@@ -7,6 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
 from django.db.models import get_model, ObjectDoesNotExist
 from django.http import HttpResponse, HttpResponseRedirect
+from django.db.models import F
 from django import VERSION
 
 from .models import BlogPost, BlogCategory
@@ -44,9 +45,9 @@ def blog_post_list(request, tag=None, year=None, month=None, username=None,
         if rate.isdigit():
             blog_posts = blog_posts.filter(rating_average=rate)
         if rate == 'upgrade':
-            blog_posts = blog_posts.filter(rating_average__gte=4)
+            blog_posts = blog_posts.filter(upvote__gte=F('downvote'))
         if rate == 'downgrade':
-            blog_posts = blog_posts.filter(rating_average__lte=3)
+            blog_posts = blog_posts.filter(downvote__gte=F('upvote'))
     author = None
     if username is not None:
         author = get_object_or_404(User, username=username)
@@ -135,7 +136,6 @@ def blog_post_feed(request, format):
 
 
 def polling(request, slug=None):
-    import pdb; pdb.set_trace();
     blog_posts = BlogPost.objects.published(for_user=request.user)
     blog_post = blog_posts.get(slug=slug)
     url = request.build_absolute_uri()

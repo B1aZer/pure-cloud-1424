@@ -1,14 +1,18 @@
 
         <div class="btn-group grades right">
-            <a class="btn" id="rockon" href="poll/?value=up"><i class="icon-thumbs-up"></i>UpGrade</a>
-            <a class="btn" href="poll/?value=down"><i class="icon-thumbs-down"></i>DownGrade</a>
+            <a class="btn" id="rockon" href="poll/?value=up"><i class="icon-thumbs-up"></i>UpGrade  <span class="badge badge-success">{{ up }}</span> </a>
+            <a class="btn" href="poll/?value=down"><i class="icon-thumbs-down"></i>DownGrade  <span class="badge badge-important">{{ down }}</span> </a>
             <a class="btn" id="stats_show"><i class="icon-hand-down"></i>Show Results</a>
         </div>  
          <div class="well" id="progress-lmuy">
+            {% if sum > 0 %}
             <div class="progress">
-                <div class="bar" style="width: {{ proc }}%;">
+                <div class="bar" style="width: {{ proc }}%;">   
                 </div>
             </div>
-            <p> UpGrades: {{proc_up }}% / DownGrades: {{ proc_down }}% </p>
-        </div>      
+            <p><span style="float:left;">UpGrades: {{proc_up }}%</span> <span style="float:right;">DownGrades: {{ proc_down }}%</span> </p>
+            {% else %}
+            <p> No votes here so far </p>
+            {% endif %}
+        </div>  
 

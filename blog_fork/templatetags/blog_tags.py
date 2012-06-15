@@ -78,5 +78,8 @@ def show_poll(post):
         proc_down = downvotes/summ*100
     return {'proc': proc,
             'proc_up': int(proc_up),
-            'proc_down': int(proc_down)}
+            'proc_down': int(proc_down),
+            'up': int(upvotes),
+            'down': int(downvotes),
+            'sum': int(summ)}
 
