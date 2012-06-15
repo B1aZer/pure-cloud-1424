@@ -20,8 +20,8 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     allow_comments = models.BooleanField(verbose_name=_("Allow comments"),
                                          default=True)
     comments = CommentsField(verbose_name=_("Comments"))
-    upvote = models.IntegerField(verbose_name=_("Upgrades"),default=0)
-    downvote = models.IntegerField(verbose_name=_("Downgrades"),default=0)
+    #upvote = models.IntegerField(verbose_name=_("Upgrades"),default=0)
+    #downvote = models.IntegerField(verbose_name=_("Downgrades"),default=0)
     #poll = models.IntegerField(default=0)
     #show_poll = models.BooleanField(verbose_name=_("Show Poll"),
     #                                     default=True)
