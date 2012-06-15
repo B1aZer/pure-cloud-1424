@@ -333,6 +333,8 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "ADMIN_PASS": "", # Live admin user password
 # }
 
+RATINGS_MAX = 2
+
 
 ##################
 # LOCAL SETTINGS #

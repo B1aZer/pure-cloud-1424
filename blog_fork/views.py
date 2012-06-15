@@ -5,13 +5,15 @@ from django.http import Http404
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.shortcuts import get_object_or_404
+from django.db.models import get_model, ObjectDoesNotExist
+from django.http import HttpResponse, HttpResponseRedirect
 from django import VERSION
 
 from .models import BlogPost, BlogCategory
 from .feeds import PostsRSS, PostsAtom
 from mezzanine.conf import settings
 from mezzanine.generic.models import AssignedKeyword, Keyword
-from mezzanine.utils.views import render, paginate
+from mezzanine.utils.views import render, paginate, set_cookie
 
 
 def blog_post_list(request, tag=None, year=None, month=None, username=None,
@@ -130,3 +132,35 @@ def blog_post_feed(request, format):
         return blog_feed_dict[format]()(request)
     else:
         return feed(request, format, feed_dict=blog_feed_dict)
+
+
+def polling(request, slug=None):
+    blog_posts = BlogPost.objects.published(for_user=request.user)
+    blog_post = blog_posts.get(slug=slug)
+    url = request.build_absolute_uri()
+    url = url.split('/')
+    url = '/'.join(url[:-2]) + '/'
+    if not blog_post:
+        return HttpResponseRedirect("/")
+    try:
+        rating_value = request.GET["value"]
+    except (KeyError, ValueError):
+        return HttpResponseRedirect(url)
+    if rating_value == 'up':
+        blog_post.upvote +=1
+        blog_post.save()
+    if rating_value == 'down':
+        blog_post.downvote +=1
+        blog_post.save()
+    ratings = request.COOKIES.get("poll-rating", "").split(",")
+    rating_string = "%s.%s" % ('blogpost',
+                               blog_post.id)
+    #"\054blog_fork.blogpost.2\054blog_fork.blogpost.1"
+    if rating_string in ratings:
+        # Already rated so abort.
+        return HttpResponseRedirect(url)
+    response = HttpResponseRedirect(url)
+    ratings.append(rating_string)
+    expiry = 60 * 60 * 24 * 365
+    set_cookie(response, "poll-rating", ",".join(ratings), expiry)
+    return response

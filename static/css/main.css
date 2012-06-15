@@ -1,0 +1,9 @@
+#progress-lmuy {
+    /*margin-left: 191px;*/
+    margin-top: 5px;
+    width: 200px;
+    float:right;
+}    
+#progress-lmuy p {
+    margin-bottom: 0;
+}

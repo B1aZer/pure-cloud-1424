@@ -16,6 +16,7 @@ urlpatterns = patterns("blog_fork.views",
         name="blog_post_list_year"),
     url("^(?P<year>\d{4})/(?P<month>\d{1,2})/(?P<slug>.*)/$",
         "blog_post_detail", name="blog_post_detail_date"),
+    url("^(?P<slug>.*)/poll/$", "polling", name="rate post"),
     url("^(?P<slug>.*)/$", "blog_post_detail", name="blog_post_detail"),
     url("^$", "blog_post_list", name="blog_post_list"),
 )

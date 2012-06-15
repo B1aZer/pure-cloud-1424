@@ -63,3 +63,20 @@ def quick_blog(context):
     """
     context["form"] = BlogPostForm()
     return context
+
+@register.inclusion_tag('blog/includes/poll.html')
+def show_poll(post):
+    proc = 0.0
+    proc_up = proc
+    proc_down = proc
+    upvotes = post.upvote
+    downvotes = post.downvote
+    summ = float(float(upvotes) + float(downvotes))
+    if summ > 0:
+        proc = upvotes/summ*100
+        proc_up = proc
+        proc_down = downvotes/summ*100
+    return {'proc': proc,
+            'proc_up': int(proc_up),
+            'proc_down': int(proc_down)}
+
