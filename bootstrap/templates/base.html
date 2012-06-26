@@ -100,10 +100,13 @@ $(function() {
     {% nevercache %}
     {% include "includes/user_panel.html" %}
     {% endnevercache %}
+    <div class="panel">
     <form action="{% url search %}" class="form-search">
-        <input class="search-query" placeholder="{% trans "Search" %}" type="text" name="q" value="{{ request.REQUEST.q }}">
-        <button class="btn" type="submit"><i class="icon-search"></i></button>
+        <div class="input-append">
+            <input class="span2 search-query" placeholder="{% trans "Search" %}" type="text" name="q" value="{{ request.REQUEST.q }}"><button class="btn" type="submit"><i class="icon-search"></i></button>
+        </div>
         </form>   
+        </div>
     {% block right_panel %}
     {% ifinstalled mezzanine.twitter %}
     {% include "twitter/tweets.html" %}
