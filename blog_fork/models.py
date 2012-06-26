@@ -56,7 +56,6 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
         Returns the first block or sentence of the first content-like
         field.
         """
-        import pdb; pdb.set_trace()
         description = ""
         if self.description:
             return self.description
