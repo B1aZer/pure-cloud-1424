@@ -229,8 +229,8 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
-    "bootstrap",
-    #"classic",
+    #"bootstrap",
+    "classic",
     #"mezzanine_html5boilerplate",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -346,6 +346,8 @@ EMAIL_SUBJECT_PREFIX = 'email_theme'
 EMAIL_USE_TLS = True
 
 
+import dj_database_url
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 ##################
 # LOCAL SETTINGS #
@@ -371,6 +373,4 @@ from mezzanine.utils.conf import set_dynamic_settings
 set_dynamic_settings(globals())
 
 
-import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
