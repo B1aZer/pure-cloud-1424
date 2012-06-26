@@ -56,9 +56,10 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
         Returns the first block or sentence of the first content-like
         field.
         """
-        description = self.description
-        if description:
-            return description
+        import pdb; pdb.set_trace()
+        description = ""
+        if self.description:
+            return self.description
         # Use the first RichTextField, or TextField if none found.
         for field_type in (RichTextField, models.TextField):
             if not description:
@@ -68,7 +69,6 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
                         description = getattr(self, field.name)
                         if description:
                             break
-        #import pdb; pdb.set_trace()
         # Fall back to the title if description couldn't be determined.
         if not description:
             description = unicode(self)
