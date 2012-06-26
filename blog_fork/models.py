@@ -8,6 +8,9 @@ from mezzanine.core.models import Displayable, Ownable, RichText, Slugged
 from mezzanine.generic.fields import CommentsField, RatingField
 from mezzanine.utils.models import AdminThumbMixin
 
+from mezzanine.core.fields import RichTextField
+from django.template.defaultfilters import truncatewords_html
+from mezzanine.utils.html import TagCloser
 
 class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     """
@@ -47,6 +50,37 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
                 month = "0" + month
             kwargs.update({"month": month, "year": self.publish_date.year})
         return (url_name, (), kwargs)
+
+    def description_from_content(self):
+        import pdb; pdb.set_trace()
+        """
+        Returns the first block or sentence of the first content-like
+        field.
+        """
+        description = self.description
+        # Use the first RichTextField, or TextField if none found.
+        for field_type in (RichTextField, models.TextField):
+            if not description:
+                for field in self._meta.fields:
+                    if isinstance(field, field_type) and \
+                        field.name != "description":
+                        description = getattr(self, field.name)
+                        if description:
+                            break
+        # Fall back to the title if description couldn't be determined.
+        if not description:
+            description = unicode(self)
+        # Strip everything after the first block or sentence.
+        ends = ("</p>", "<br />", "<br/>", "<br>", "</ul>",
+                "\n", ". ", "! ", "? ")
+        for end in ends:
+            pos = description.lower().find(end)
+            if pos > -1:
+                description = TagCloser(description[:pos]).html
+                break
+        else:
+            description = truncatewords_html(description, 100)
+        return description     
 
 
 class BlogCategory(Slugged):
