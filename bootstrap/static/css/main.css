@@ -1,0 +1,19 @@
+#comments {
+    margin-top: 40px;
+}
+.right {
+    float:right;
+}
+.grades{
+    margin-top: 5px;
+}
+#progress-lmuy {
+    /*margin-left: 191px;*/
+    margin-top: 3px;
+    width: 319px;
+    float:right;
+    clear:both;
+}    
+#progress-lmuy p {
+    margin-bottom: 0;
+}

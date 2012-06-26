@@ -89,7 +89,7 @@ USE_SOUTH = True
 # In the format (('Full Name', 'email@example.com'),
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+     ('Amdin', 'root.letmeupgradeyou@gmail.com'),
 )
 MANAGERS = ADMINS
 
@@ -229,7 +229,8 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
-    "classic",
+    "bootstrap",
+    #"classic",
     #"mezzanine_html5boilerplate",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -336,6 +337,14 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #RATINGS_MAX = 2
 #Verify by email
 ACCOUNTS_VERIFICATION_REQUIRED = True
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = 'letmeupgradeyou'
+EMAIL_HOST_USER = 'root.letmeupgradeyou'
+EMAIL_SUBJECT_PREFIX = 'email_theme'
+EMAIL_USE_TLS = True
+
 
 
 ##################
