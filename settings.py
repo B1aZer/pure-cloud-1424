@@ -346,8 +346,6 @@ EMAIL_SUBJECT_PREFIX = 'email_theme'
 EMAIL_USE_TLS = True
 
 
-import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
 
 ##################
 # LOCAL SETTINGS #
@@ -373,4 +371,6 @@ from mezzanine.utils.conf import set_dynamic_settings
 set_dynamic_settings(globals())
 
 
+import dj_database_url
+DATABASES = {'default': dj_database_url.config(default='sqlite://///Users/blaze/Sites/clients/blogzine/dev.db')}
 
