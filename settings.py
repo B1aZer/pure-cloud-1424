@@ -369,3 +369,8 @@ except ImportError:
 # applicable.
 from mezzanine.utils.conf import set_dynamic_settings
 set_dynamic_settings(globals())
+
+
+import dj_database_url
+DATABASES = {'default': dj_database_url.config(default='postgres://localhost')}
+
