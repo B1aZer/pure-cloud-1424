@@ -1,0 +1,170 @@
+[
+    {
+        "pk": 9,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 0,
+            "parent": null,
+            "description": "Upgrades",
+            "title": "Upgrades",
+            "in_footer": false,
+            "titles": "Upgrades",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/upgrade",
+            "site": 1
+        }
+    },
+       {
+        "pk": 10,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 0,
+            "parent": 9,
+            "description": "Rate 5",
+            "title": "Rating 5",
+            "in_footer": false,
+            "titles": "Upgrades / Rate 5",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/5",
+            "site": 1
+        }
+    },
+    {
+        "pk": 11,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 1,
+            "parent": 9,
+            "description": "Rate 4",
+            "title": "Rating 4",
+            "in_footer": false,
+            "titles": "Upgrades / Rate 4",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/4",
+            "site": 1    
+        }
+    },                               
+    {
+        "pk": 12,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 0,
+            "parent": null,
+            "description": "Downgrades",
+            "title": "Downgrades",
+            "in_footer": false,
+            "titles": "Downgrades",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/downgrade",
+            "site": 1
+        }
+    },
+       {
+        "pk": 13,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 0,
+            "parent": 12,
+            "description": "Rate 3",
+            "title": "Rating 3",
+            "in_footer": false,
+            "titles": "Downgrades / Rate 3",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/3",
+            "site": 1
+        }
+    },
+    {
+        "pk": 14,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 1,
+            "parent": 12,
+            "description": "Rate 2",
+            "title": "Rating 2",
+            "in_footer": false,
+            "titles": "Downgrades / Rate 2",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/2",
+            "site": 1    
+        }
+    }, 
+    {
+        "pk": 15,
+        "model": "pages.page",
+        "fields": {
+            "status": 2,
+            "_order": 1,
+            "parent": 12,
+            "description": "Rate 1",
+            "title": "Rating 1",
+            "in_footer": false,
+            "titles": "Downgrades / Rate 1",
+            "content_model": "richtextpage",
+            "in_navigation": true,
+            "slug": "poll/1",
+            "site": 1    
+        }
+    }, 
+    {
+        "pk": 9,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Upgrades</p>"
+        }
+    },  
+    {
+        "pk": 10,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Rating 5</p>"
+        }
+    },  
+    {
+        "pk": 11,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Rating 4</p>"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Downgrades</p>"
+        }
+    },  
+    {
+        "pk": 13,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Rating 3</p>"
+        }
+    },  
+    {
+        "pk": 14,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Rating 2</p>"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "pages.richtextpage",
+        "fields": {
+            "content": "<p>Rating 1</p>"
+        }
+    }     
+]

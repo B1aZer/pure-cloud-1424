@@ -92,6 +92,7 @@
 {% editable blog_post.content %}
 {{ blog_post.description_from_content|safe }}
 {% endeditable %}
+<div style="clear:both"></div>
 
 <p class="blog-list-detail">
     {% if blog_post.keyword_list %}
@@ -127,5 +128,7 @@
 {% endblock %}
 
 {% block right_panel %}
+<div class="panel">
 {% include "blog/includes/filter_panel.html" %}
+</div>
 {% endblock %}

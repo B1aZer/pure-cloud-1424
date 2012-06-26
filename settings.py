@@ -169,10 +169,6 @@ DATABASES = {
     }
 }
 
-#HEROKU addon
-import dj_database_url
-DATABASES = {'default': dj_database_url.config(default='postgres://postgres:qwe123asd123@localhost/blog')}
-
 #########
 # PATHS #
 #########
@@ -229,8 +225,8 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
-    #"bootstrap",
-    "classic",
+    "bootstrap",
+    #"classic",
     #"mezzanine_html5boilerplate",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -244,7 +240,7 @@ INSTALLED_APPS = (
     "mezzanine.conf",
     "mezzanine.core",
     "mezzanine.generic",
-    # "mezzanine.blog",
+    #"mezzanine.blog",
     'blog_fork',
     "mezzanine.forms",
     "mezzanine.pages",
