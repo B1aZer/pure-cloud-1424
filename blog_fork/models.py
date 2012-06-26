@@ -57,7 +57,7 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
         field.
         """
         description = ""
-        if self.description:
+        if not self.gen_description and self.description:
             return self.description
         # Use the first RichTextField, or TextField if none found.
         for field_type in (RichTextField, models.TextField):
