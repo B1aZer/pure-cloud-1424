@@ -52,7 +52,6 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
         return (url_name, (), kwargs)
 
     def description_from_content(self):
-        import pdb; pdb.set_trace()
         """
         Returns the first block or sentence of the first content-like
         field.
@@ -80,7 +79,7 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
                 break
         else:
             description = truncatewords_html(description, 100)
-        return description     
+        return description
 
 
 class BlogCategory(Slugged):
