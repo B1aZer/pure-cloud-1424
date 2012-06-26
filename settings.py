@@ -243,13 +243,13 @@ INSTALLED_APPS = (
     "mezzanine.conf",
     "mezzanine.core",
     "mezzanine.generic",
-    #"mezzanine.blog",
+    # "mezzanine.blog",
     'blog_fork',
     "mezzanine.forms",
     "mezzanine.pages",
     "mezzanine.galleries",
     #"mezzanine.twitter",
-    #"mezzanine.accounts",
+    "mezzanine.accounts",
     #"mezzanine.mobile",
 )
 
@@ -333,7 +333,9 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 #     "ADMIN_PASS": "", # Live admin user password
 # }
 
-RATINGS_MAX = 2
+#RATINGS_MAX = 2
+#Verify by email
+ACCOUNTS_VERIFICATION_REQUIRED = True
 
 
 ##################
