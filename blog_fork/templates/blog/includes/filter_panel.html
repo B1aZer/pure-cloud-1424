@@ -7,9 +7,9 @@
 {% for recent_post in recent_posts %}
 <li><span class="thumb">
 {% if recent_post.featured_image %}
-<img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}"></a>
 {% else %}  
-<img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}"></a>
 {% endif %}  
 </span>
 <a href="{{ recent_post.get_absolute_url }}"
@@ -25,9 +25,9 @@
 {% for recent_post in upvotes %}
 <li><span class="thumb">
 {% if recent_post.featured_image %}
-<img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}"></a>
 {% else %}  
-<img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}"></a>
 {% endif %}  
 </span>
 <a href="{{ recent_post.get_absolute_url }}"
@@ -43,9 +43,9 @@
 {% for recent_post in downvotes  %}
 <li><span class="thumb">
 {% if recent_post.featured_image %}
-<img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ MEDIA_URL }}{% thumbnail recent_post.featured_image 50 50 %}"></a>
 {% else %}  
-<img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}">
+<a href="{{ recent_post.get_absolute_url }}"><img class="featured-thumb" src="{{ STATIC_URL }}{% thumbnail 'img/no-thumbnail.png' 50 50 %}"></a>
 {% endif %}  
 </span>
 <a href="{{ recent_post.get_absolute_url }}"
