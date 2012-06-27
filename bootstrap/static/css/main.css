@@ -50,6 +50,8 @@ body {
 }
 #branding {
     margin-bottom:5px;
+    margin-top: 5px;
+    
 }
 .middle {
     background-color: white;
@@ -80,4 +82,7 @@ body {
     margin: 0 5px;
     float: left;
 }    
+.btn-account, .btn-account:active {
+margin: 0 0px !important;
+}
 
