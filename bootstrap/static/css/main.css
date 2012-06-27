@@ -21,3 +21,63 @@
 .panel form {
     margin: 0;
 }
+body {
+    background-color:whiteSmoke;
+    /*padding-top: 90px; */
+}
+.navbar {
+    margin-bottom:0;
+}
+.navbar .nav > li > a {
+    padding-right:20px;
+    padding-left:25px;
+}
+.breadcrumb {
+    margin: 0;
+    border: 0px solid #DDD;
+}          
+.main {
+    /*padding:10px;*/
+    background-color:white;
+    /*background:rgba(220,220,220, 0.1);*/
+}
+.header {
+    /*padding:10px;*/
+    background-color:whiteSmoke;
+}   
+.banner{
+    text-align:center;
+}
+#branding {
+    margin-bottom:5px;
+}
+.middle {
+    background-color: white;
+}
+.wrappper {
+    background:rgba(220,220,220, 0.1);
+}
+.wrap_middle {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.wrap_right {
+    margin-top: 10px;
+} 
+.panel {
+    background:inherit;
+    border:0;
+}
+.recent-posts li {
+    min-height: 90px;
+}
+.thumb {
+    display: block;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    margin: 0 5px;
+    float: left;
+}    
+

@@ -48,6 +48,8 @@ def blog_authors(*args):
     return list(authors.annotate(post_count=Count("blogposts")))
 
 
+
+
 @register.as_tag
 def blog_recent_posts(limit=5):
     """
@@ -63,6 +65,29 @@ def quick_blog(context):
     """
     context["form"] = BlogPostForm()
     return context
+
+
+@register.as_tag
+def blog_upvotes(limit=3):
+    upvotes = []
+    blog_posts = BlogPost.objects.published()[:limit]
+    for post in blog_posts:
+        upv = post.upvote
+        dnv = post.downvote
+        if upv >= dnv:
+            upvotes.append(post)
+    return upvotes
+
+@register.as_tag
+def blog_downvotes(limit=3):
+    downvotes = []
+    blog_posts = BlogPost.objects.published()[:limit]
+    for post in blog_posts:
+        upv = post.upvote
+        dnv = post.downvote
+        if dnv >= upv:
+            downvotes.append(post)
+    return downvotes
 
 @register.inclusion_tag('blog/includes/poll.html')
 def show_poll(post):

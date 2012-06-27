@@ -17,7 +17,7 @@
 
 {% compress css %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-cerulean.css">
-<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">
+<!--<link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap-responsive.css">-->
 <link rel="stylesheet" href="{{ STATIC_URL }}css/mezzanine.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css">
 {% ifinstalled cartridge.shop %}
@@ -47,24 +47,19 @@ $(function() {
 </head>
 <body id="{% block body_id %}body{% endblock %}">
 
-<div class="navbar navbar-fixed-top">
-<div class="navbar-inner">
-<div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </a>
-    {% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-    {% if settings.SITE_TAGLINE %}<p class="tagline">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-    <div class="nav-collapse">
-        {% page_menu "pages/menus/dropdown.html" %}
-    </div>
-</div>
-</div>
-</div>
 
-<div class="container">
+
+
+
+
+<div class="container header">
+
+    <header id="branding" role="banner">
+	<div class="banner"><a title="home"><img src="static/img/HTML5_Logo.png" style="height:200px;" class="brand-image main-image lead-image"></a></div>			
+	</header>   
+
+
+  
 
 {% nevercache %}
 {% for message in messages %}
@@ -75,17 +70,40 @@ $(function() {
 {% endnevercache %}
 
 
-<h1>{% block title %}{% endblock %}</h1>
+<!--<h1>{% block title %}{% endblock %}</h1>-->
 
-<ul class="breadcrumb">
-{% spaceless %}
-{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-{% endspaceless %}
-</ul>
+
+  <div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </a>
+    <!--{% if settings.SITE_TITLE %}<a class="brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}-->
+    <!--{% if settings.SITE_TAGLINE %}<p class="tagline">{{ settings.SITE_TAGLINE }}</p>{% endif %}-->
+    <div class="nav-collapse">
+        {% page_menu "pages/menus/dropdown.html" %}
+    </div>
+<!--<li class="right"><a href="{% url blog_post_feed "rss" %}">{% trans "Subscribe" %}</a></li>-->
+
+</div>
+</div>
+</div>    
+<!--<ul class="breadcrumb">-->
+<!--{% spaceless %}-->
+<!--{% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}-->
+<!--{% endspaceless %}-->
+<!--<li class="right"><a href="{% url blog_post_feed "rss" %}">{% trans "Subscribe" %}</a></li>-->
+<!--</ul> -->
+      
+
 
 </div>
 
-<div class="container">
+<div class="container main">
+<div class="wrappper">
 <div class="row">
 
     <!--<div class="span2 left">-->
@@ -93,10 +111,13 @@ $(function() {
     <!--</div>-->
 
 <div class="span9 middle">
+<div class="wrap_middle">
     {% block main %}{% endblock %}
+</div>
 </div>
 
 <div class="span3 right">
+<div class="wrap_right">
     {% nevercache %}
     {% include "includes/user_panel.html" %}
     {% endnevercache %}
@@ -113,8 +134,12 @@ $(function() {
     {% endifinstalled %}
     {% endblock %}
 </div>
+</div>
 
 </div>
+</div>
+
+
 </div>
 
 <footer>
