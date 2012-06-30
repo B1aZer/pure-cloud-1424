@@ -80,7 +80,7 @@ BLOG_USE_FEATURED_IMAGE = True
 # If True, the south application will be automatically added to the
 # INSTALLED_APPS setting. This setting is not defined in
 # mezzanine.conf.defaults as is the case with the above settings.
-USE_SOUTH = False
+USE_SOUTH = True
 
 
 ########################
