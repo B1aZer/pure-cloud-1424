@@ -10,6 +10,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.db.models import F
 from django import VERSION
 
+import json
+
 from .models import BlogPost, BlogCategory
 from .feeds import PostsRSS, PostsAtom
 from mezzanine.conf import settings
@@ -45,9 +47,9 @@ def blog_post_list(request, tag=None, year=None, month=None, username=None,
         if rate.isdigit():
             blog_posts = blog_posts.filter(rating_average=rate)
         if rate == 'upgrade':
-            blog_posts = blog_posts.filter(upvote__gte=F('downvote'))
+            blog_posts = blog_posts.filter(upvote__gt=F('downvote'))
         if rate == 'downgrade':
-            blog_posts = blog_posts.filter(downvote__gte=F('upvote'))
+            blog_posts = blog_posts.filter(downvote__gt=F('upvote'))
     author = None
     if username is not None:
         author = get_object_or_404(User, username=username)
@@ -142,7 +144,7 @@ def polling(request, slug=None):
     url = url.split('/')
     url = '/'.join(url[:-2]) + '/'
     if not blog_post:
-        return HttpResponseRedirect("/")
+        return HttpResponse(json.dumps({'result':'Sorry, no such post'}), mimetype="application/json")
     try:
         rating_value = request.GET["value"]
     except (KeyError, ValueError):
@@ -153,14 +155,14 @@ def polling(request, slug=None):
     #"\054blog_fork.blogpost.2\054blog_fork.blogpost.1"
     if rating_string in ratings:
         # Already rated so abort.
-        return HttpResponseRedirect(url)
+        return HttpResponse(json.dumps({'result':'You have already voted'}), mimetype="application/json")
     if rating_value == 'up':
         blog_post.upvote +=1
         blog_post.save()
     if rating_value == 'down':
         blog_post.downvote +=1
         blog_post.save()
-    response = HttpResponseRedirect(url)
+    response = HttpResponse(json.dumps({'result':rating_value}), mimetype="application/json") 
     ratings.append(rating_string)
     expiry = 60 * 60 * 24 * 365
     set_cookie(response, "poll-rating", ",".join(ratings), expiry)

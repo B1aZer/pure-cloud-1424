@@ -74,7 +74,7 @@ def blog_upvotes(limit=3):
     for post in blog_posts:
         upv = post.upvote
         dnv = post.downvote
-        if upv >= dnv:
+        if upv > dnv:
             upvotes.append(post)
     return upvotes
 
@@ -85,7 +85,7 @@ def blog_downvotes(limit=3):
     for post in blog_posts:
         upv = post.upvote
         dnv = post.downvote
-        if dnv >= upv:
+        if dnv > upv:
             downvotes.append(post)
     return downvotes
 

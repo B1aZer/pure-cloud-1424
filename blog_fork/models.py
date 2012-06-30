@@ -26,8 +26,8 @@ class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     upvote = models.IntegerField(verbose_name=_("Upgrades"),default=0)
     downvote = models.IntegerField(verbose_name=_("Downgrades"),default=0)
     #poll = models.IntegerField(default=0)
-    #show_poll = models.BooleanField(verbose_name=_("Show Poll"),
-    #                                     default=True)
+    show_poll = models.BooleanField(verbose_name=_("Show Poll"),
+                                         default=False)
     rating = RatingField(verbose_name=_("Rating"))
     featured_image = FileField(verbose_name=_("Featured Image"), null=True,
                                upload_to="blog", max_length=255, blank=True)

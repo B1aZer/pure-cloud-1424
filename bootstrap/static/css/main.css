@@ -6,14 +6,20 @@
 }
 .grades{
     margin-top: 5px;
+    margin-bottom: 10px;
+}
+.front_alert {
+    margin-top: 15px;
 }
 #progress-lmuy {
     /*margin-left: 191px;*/
     margin-top: 3px;
-    width: 319px;
-    float:right;
-    clear:both;
-}    
+    width: 250px;
+    top:254px;
+    position: relative;
+    top: -72px;
+    float: right;
+}  
 #progress-lmuy p {
     margin-bottom: 0;
     line-height: 8px;
