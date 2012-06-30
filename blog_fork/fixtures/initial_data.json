@@ -44,29 +44,29 @@
     }
 },
 {
-   "pk":3,
-   "model":"pages.page",
-   "fields":{
-      "status":2,
-      "_order":4,
-      "titles":"Contact us",
-      "description":"fill in the form below to get in touch with us.",
-      "parent":null,
-      "title":"Contact us",
-      "in_footer":true,
-      "short_url":null,
-      "login_required":false,
-      "site":1,
-      "keywords_string":"",
-      "expiry_date":null,
-      "content_model":"form",
-      "in_navigation":true,
-      "slug":"contact",
-      "gen_description":true
-   }
+    "pk":3,
+    "model":"pages.page",
+    "fields":{
+        "status":2,
+        "_order":4,
+        "titles":"Contact us",
+        "description":"fill in the form below to get in touch with us.",
+        "parent":null,
+        "title":"Contact us",
+        "in_footer":true,
+        "short_url":null,
+        "login_required":false,
+        "site":1,
+        "keywords_string":"",
+        "expiry_date":null,
+        "content_model":"form",
+        "in_navigation":true,
+        "slug":"contact",
+        "gen_description":true
+    }
 },  
 {
-    "pk":8,
+    "pk":4,
     "model":"pages.page",
     "fields":{
         "status":2,
@@ -88,7 +88,7 @@
     }
 },
 {
-    "pk": 9,
+    "pk": 5,
     "model": "pages.page",
     "fields": {
         "status": 2,
@@ -105,7 +105,7 @@
     }
 },
 {
-    "pk": 10,
+    "pk": 6,
     "model": "pages.page",
     "fields": {
         "status": 2,
@@ -122,36 +122,36 @@
     }
 },      
 {
-   "pk":16,
-   "model":"pages.page",
-   "fields":{
-      "status":2,
-      "_order":6,
-      "titles":"FAQ",
-      "description":"when you need more space and compare the costs of installing a\u00a0mezzanine floor\u00a0with the various costs associated when moving to larger premises or a bigger unit, then a mezzanine floor will pay for itself in a very short time. installing a mezzanine floor will quickly give you the extra space you need with the minimum of disruption and impact on your business. you may need to inform your landlord of the proposed changes, to make sure you comply with the terms and conditions of your lease. a free-standing mezzanine floor which is not attached to the building structure, will mean that the floor may not normally be subject to any additional rent or rates. first floors can assist you with any building and fire safety regulations.",
-      "parent":null,
-      "title":"FAQ",
-      "in_footer":true,
-      "short_url":null,
-      "login_required":false,
-      "site":1,
-      "keywords_string":"",
-      "expiry_date":null,
-      "content_model":"richtextpage",
-      "in_navigation":false,
-      "slug":"faq",
-      "gen_description":true
-   }
+    "pk": 7,
+    "model":"pages.page",
+    "fields":{
+        "status":2,
+        "_order":6,
+        "titles":"FAQ",
+        "description":"when you need more space and compare the costs of installing a\u00a0mezzanine floor\u00a0with the various costs associated when moving to larger premises or a bigger unit, then a mezzanine floor will pay for itself in a very short time. installing a mezzanine floor will quickly give you the extra space you need with the minimum of disruption and impact on your business. you may need to inform your landlord of the proposed changes, to make sure you comply with the terms and conditions of your lease. a free-standing mezzanine floor which is not attached to the building structure, will mean that the floor may not normally be subject to any additional rent or rates. first floors can assist you with any building and fire safety regulations.",
+        "parent":null,
+        "title":"FAQ",
+        "in_footer":true,
+        "short_url":null,
+        "login_required":false,
+        "site":1,
+        "keywords_string":"",
+        "expiry_date":null,
+        "content_model":"richtextpage",
+        "in_navigation":false,
+        "slug":"faq",
+        "gen_description":true
+    }
 }, 
 {
-    "pk":17,
+    "pk":8,
     "model":"pages.page",
     "fields":{
         "status":2,
         "_order":0,
         "titles":"Photos / upload image",
         "description":"you can upload any file here.",
-        "parent":8,
+        "parent":4,
         "title":"upload image",
         "in_footer":false,
         "short_url":null,
@@ -166,286 +166,285 @@
     }
 },                
 {
-   "pk":1,
-   "model":"pages.richtextpage",
-   "fields":{
-      "content":"<p>this is advertising page. im not sure what exatcly is gonna be here.</p>"
-   }
+    "pk":9,
+    "model":"pages.page",
+    "fields":{
+        "status":2,
+        "_order":0,
+        "titles":"BlogRoll",
+        "description":"",
+        "parent":null,
+        "title":"BlogRoll",
+        "in_footer":false,
+        "short_url":null,
+        "login_required":false,
+        "site":1,
+        "keywords_string":"",
+        "expiry_date":null,
+        "content_model":"blogroll",
+        "in_navigation":false,
+        "slug":"BlogRoll",
+        "gen_description":true
+    }
+},                
+{
+    "pk":1,
+    "model":"pages.richtextpage",
+    "fields":{
+        "content":"<p>this is advertising page. im not sure what exatcly is gonna be here.</p>"
+    }
 }, 
 {
-   "pk":2,
-   "model":"pages.richtextpage",
-   "fields":{
-      "content":"<p>blog</p>"
-   }
+    "pk":2,
+    "model":"pages.richtextpage",
+    "fields":{
+        "content":"<p>blog</p>"
+    }
 }, 
 {
-   "pk":8,
-   "model":"galleries.gallery",
-   "fields":{
-      "content":"<p>a demo gallery of cities from around the world.</p>",
-      "zip_import":""
-   }
+    "pk":4,
+    "model":"galleries.gallery",
+    "fields":{
+        "content":"<p>a demo gallery of cities from around the world.</p>",
+        "zip_import":""
+    }
 },  
 {
-    "pk": 9,
+    "pk": 5,
     "model": "pages.richtextpage",
     "fields": {
         "content": "<p>Upgrades</p>"
     }
 },  
 {
-    "pk": 10,
+    "pk": 6,
     "model": "pages.richtextpage",
     "fields": {
         "content": "<p>Downgrades</p>"
     }
 },
-
-
 {
-   "pk":16,
-   "model":"pages.richtextpage",
-   "fields":{
-      "content":"<p>when you need more space and compare the costs of installing a\u00a0<a href=\"http://www.firstfloors.co.uk/mezzanine_floors.html\" title=\"mezzanine floors\">mezzanine floor</a>\u00a0with the various costs associated when moving to larger premises or a bigger unit, then a mezzanine floor will pay for itself in a very short time. installing a mezzanine floor will quickly give you the extra space you need with the minimum of disruption and impact on your business. you may need to inform your landlord of the proposed changes, to make sure you comply with the terms and conditions of your lease. a free-standing mezzanine floor which is not attached to the building structure, will mean that the floor may not normally be subject to any additional rent or rates. first floors can assist you with any building and fire safety regulations.</p>\n<p>we have compiled a set of typical questions asked by our customers when purchasing a mezzanine floor which cover the following areas:</p>\n<ul>\n<li>site surveys and building regulations</li>\n<li>rates and local authorities.</li>\n<li>dealing with your landlords</li>\n<li>fire regulations</li>\n<li>disabled access</li>\n<li>pricing and any other extra costs.</li>\n<li>mezzanine specifications &amp; design ( columns &amp; loading )</li>\n<li>preparation</li>\n<li>impact on your business</li>\n<li>timescales &amp; installation</li>\n</ul>\n<p>q. is a site survey required ?<br><br>a. a site survey is always recommended as it allows a member of our team to discuss in more detail requirements such as staircases, walkways, protected escape routes, loading requirements, reducing the number of columns under your new mezzanine floors. this will allow us to produce the most efficient design and allows us to offer you the best possible price.</p>\n<p>q. will the mezzanine floor require building regulation approval ?<br><br>a. yes. building regulations is required for almost all mezzanine floor installations. first floors will provide calculations , design and drawings to help support your application. we will submit these on your behalf.</p>\n<p>q. will first floors (uk) take responsibility for obtaining building regulations ?<br><br>a. we will be happy to make an application on your behalf. we do not charge for the preparation of drawings and calculations necessary, providing the installation takes place . all we pass on is the statutory fees charged by the local authority or approved building inspector.</p>\n<p>q. can i obtain approval before i commit to placing a mezzanine order with first floors uk.<br><br>a. yes this is possible, but we will require a purchase order for the initial survey, loading calculations and any design and drawings which are needed to submit to the local authority. as stated above we do not charge for gaining building regulations approval, providing the installation takes place. if the installation does not go ahead we would have to charge a nominal fee to cover our costs. this fee, however, would be reimbursed should the installation take place in the future.</p>\n<p>q. can i install the mezzanine floor before i have obtained building regulations approval.<br><br>a. yes, we can commence with your mezzanine project, within 48 hours of submitting the application for building regulations to the local authority.</p>\n<p>q. who makes sure that the mezzanine floor design, manufacture and installation is fully compliant with all building regulations and fire safety standards ?<br><br>a. first floors uk will take responsibility for this.</p>\n<p>q. do i need planning permission when installing a new mezzanine floor.<br><br>a. in almost all cases you will not need planning permission, if it is a fully demountable structure and the changes are internal. you do however require building regulations approval.</p>\n<p>q. what are the size restrictions doe a mezzanine flooring.<br><br>a. building regulations do not limit the size ,shape or height of the new mezzanine floor. the government, has however been trying to control the expansion of retail space in out-of-town developments and has brought in legislation which requires planning permission for floors greater than 200 sq.m. you can however add multiple floors less than 200 sq.m without requiring planning permission</p>\n<p>q. how will a new mezzanine floor affect my business rates ?<br><br>a. when a mezzanine floor is used for storage purposes only then it does not normally attract increased rate. if the new floor is used for office accommodation it sometimes will.</p>"
-   }
+    "pk": 7,
+    "model":"pages.richtextpage",
+    "fields":{
+        "content":"<p>when you need more space and compare the costs of installing a\u00a0<a href=\"http://www.firstfloors.co.uk/mezzanine_floors.html\" title=\"mezzanine floors\">mezzanine floor</a>\u00a0with the various costs associated when moving to larger premises or a bigger unit, then a mezzanine floor will pay for itself in a very short time. installing a mezzanine floor will quickly give you the extra space you need with the minimum of disruption and impact on your business. you may need to inform your landlord of the proposed changes, to make sure you comply with the terms and conditions of your lease. a free-standing mezzanine floor which is not attached to the building structure, will mean that the floor may not normally be subject to any additional rent or rates. first floors can assist you with any building and fire safety regulations.</p>\n<p>we have compiled a set of typical questions asked by our customers when purchasing a mezzanine floor which cover the following areas:</p>\n<ul>\n<li>site surveys and building regulations</li>\n<li>rates and local authorities.</li>\n<li>dealing with your landlords</li>\n<li>fire regulations</li>\n<li>disabled access</li>\n<li>pricing and any other extra costs.</li>\n<li>mezzanine specifications &amp; design ( columns &amp; loading )</li>\n<li>preparation</li>\n<li>impact on your business</li>\n<li>timescales &amp; installation</li>\n</ul>\n<p>q. is a site survey required ?<br><br>a. a site survey is always recommended as it allows a member of our team to discuss in more detail requirements such as staircases, walkways, protected escape routes, loading requirements, reducing the number of columns under your new mezzanine floors. this will allow us to produce the most efficient design and allows us to offer you the best possible price.</p>\n<p>q. will the mezzanine floor require building regulation approval ?<br><br>a. yes. building regulations is required for almost all mezzanine floor installations. first floors will provide calculations , design and drawings to help support your application. we will submit these on your behalf.</p>\n<p>q. will first floors (uk) take responsibility for obtaining building regulations ?<br><br>a. we will be happy to make an application on your behalf. we do not charge for the preparation of drawings and calculations necessary, providing the installation takes place . all we pass on is the statutory fees charged by the local authority or approved building inspector.</p>\n<p>q. can i obtain approval before i commit to placing a mezzanine order with first floors uk.<br><br>a. yes this is possible, but we will require a purchase order for the initial survey, loading calculations and any design and drawings which are needed to submit to the local authority. as stated above we do not charge for gaining building regulations approval, providing the installation takes place. if the installation does not go ahead we would have to charge a nominal fee to cover our costs. this fee, however, would be reimbursed should the installation take place in the future.</p>\n<p>q. can i install the mezzanine floor before i have obtained building regulations approval.<br><br>a. yes, we can commence with your mezzanine project, within 48 hours of submitting the application for building regulations to the local authority.</p>\n<p>q. who makes sure that the mezzanine floor design, manufacture and installation is fully compliant with all building regulations and fire safety standards ?<br><br>a. first floors uk will take responsibility for this.</p>\n<p>q. do i need planning permission when installing a new mezzanine floor.<br><br>a. in almost all cases you will not need planning permission, if it is a fully demountable structure and the changes are internal. you do however require building regulations approval.</p>\n<p>q. what are the size restrictions doe a mezzanine flooring.<br><br>a. building regulations do not limit the size ,shape or height of the new mezzanine floor. the government, has however been trying to control the expansion of retail space in out-of-town developments and has brought in legislation which requires planning permission for floors greater than 200 sq.m. you can however add multiple floors less than 200 sq.m without requiring planning permission</p>\n<p>q. how will a new mezzanine floor affect my business rates ?<br><br>a. when a mezzanine floor is used for storage purposes only then it does not normally attract increased rate. if the new floor is used for office accommodation it sometimes will.</p>"
+    }
 },
 {
-   "pk":1,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":0,
-      "gallery":8,
-      "file":"uploads/gallery/amsterdam, holland_1.jpg",
-      "description":"amsterdam  holland 1"
-   }
+    "pk": 9,
+    "model": "blog_fork.blogroll",
+    "fields": {
+        "dob": ""
+    }
+},     
+{
+    "pk":1,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":0,
+        "gallery":4,
+        "file":"uploads/gallery/amsterdam, holland_1.jpg",
+        "description":"amsterdam  holland 1"
+    }
 },
 {
-   "pk":2,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":1,
-      "gallery":8,
-      "file":"uploads/gallery/asturias, brazil_1.jpg",
-      "description":"asturias  brazil 1"
-   }
+    "pk":2,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":1,
+        "gallery":4,
+        "file":"uploads/gallery/asturias, brazil_1.jpg",
+        "description":"asturias  brazil 1"
+    }
 },
 {
-   "pk":3,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":2,
-      "gallery":8,
-      "file":"uploads/gallery/athens, greece_1.jpg",
-      "description":"athens  greece 1"
-   }
+    "pk":3,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":2,
+        "gallery":4,
+        "file":"uploads/gallery/athens, greece_1.jpg",
+        "description":"athens  greece 1"
+    }
 },
 {
-   "pk":4,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":3,
-      "gallery":8,
-      "file":"uploads/gallery/austin, usa_1.jpg",
-      "description":"austin  usa 1"
-   }
+    "pk":4,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":3,
+        "gallery":4,
+        "file":"uploads/gallery/austin, usa_1.jpg",
+        "description":"austin  usa 1"
+    }
 },
 {
-   "pk":5,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":4,
-      "gallery":8,
-      "file":"uploads/gallery/\u00c1vila, spain_1.jpg",
-      "description":"\u00c1vila  spain 1"
-   }
+    "pk":5,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":4,
+        "gallery":4,
+        "file":"uploads/gallery/\u00c1vila, spain_1.jpg",
+        "description":"\u00c1vila  spain 1"
+    }
 },
 {
-   "pk":6,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":5,
-      "gallery":8,
-      "file":"uploads/gallery/bangkok, thailand_1.jpg",
-      "description":"bangkok  thailand 1"
-   }
+    "pk":6,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":5,
+        "gallery":4,
+        "file":"uploads/gallery/bangkok, thailand_1.jpg",
+        "description":"bangkok  thailand 1"
+    }
 },
 {
-   "pk":7,
-   "model":"galleries.galleryimage",
-   "fields":{
-      "_order":6,
-      "gallery":8,
-      "file":"uploads/gallery/berlin, germany_1.jpg",
-      "description":"berlin  germany 1"
-   }
+    "pk":7,
+    "model":"galleries.galleryimage",
+    "fields":{
+        "_order":6,
+        "gallery":4,
+        "file":"uploads/gallery/berlin, germany_1.jpg",
+        "description":"berlin  germany 1"
+    }
 },
 {
-   "pk":17,
-   "model":"forms.form",
-   "fields":{
-      "email_message":"",
-      "email_copies":"",
-      "button_text":"Submit",
-      "response":"<p>Thank you for your contribution.</p>",
-      "content":"<p>You can upload any file here.</p>",
-      "send_email":false,
-      "email_subject":"",
-      "email_from":""
-   }
+    "pk":8,
+    "model":"forms.form",
+    "fields":{
+        "email_message":"",
+        "email_copies":"",
+        "button_text":"Submit",
+        "response":"<p>Thank you for your contribution.</p>",
+        "content":"<p>You can upload any file here.</p>",
+        "send_email":false,
+        "email_subject":"",
+        "email_from":""
+    }
 },
 {
-   "pk":3,
-   "model":"forms.form",
-   "fields":{
-      "email_message":"",
-      "email_copies":"",
-      "button_text":"Submit",
-      "response":"<p>Thanks for getting in touch with us. We'll get back to you as soon as possible.</p>",
-      "content":"<p>Fill in the form below to get in touch with us.</p>",
-      "send_email":true,
-      "email_subject":"",
-      "email_from":""
-   }
+    "pk":3,
+    "model":"forms.form",
+    "fields":{
+        "email_message":"",
+        "email_copies":"",
+        "button_text":"Submit",
+        "response":"<p>Thanks for getting in touch with us. We'll get back to you as soon as possible.</p>",
+        "content":"<p>Fill in the form below to get in touch with us.</p>",
+        "send_email":true,
+        "email_subject":"",
+        "email_from":""
+    }
 },
 {
-   "pk":7,
-   "model":"forms.field",
-   "fields":{
-      "field_type":9,
-      "_order":0,
-      "form":17,
-      "default":"",
-      "required":true,
-      "label":"File Upload",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
+    "pk":1,
+    "model":"forms.field",
+    "fields":{
+        "field_type":1,
+        "_order":0,
+        "form":3,
+        "default":"",
+        "required":true,
+        "label":"Name",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 },
 {
-   "pk":1,
-   "model":"forms.field",
-   "fields":{
-      "field_type":1,
-      "_order":0,
-      "form":3,
-      "default":"",
-      "required":true,
-      "label":"Name",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
+    "pk":2,
+    "model":"forms.field",
+    "fields":{
+        "field_type":3,
+        "_order":1,
+        "form":3,
+        "default":"",
+        "required":true,
+        "label":"Email",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 },
 {
-   "pk":2,
-   "model":"forms.field",
-   "fields":{
-      "field_type":3,
-      "_order":1,
-      "form":3,
-      "default":"",
-      "required":true,
-      "label":"Email",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
+    "pk":3,
+    "model":"forms.field",
+    "fields":{
+        "field_type":6,
+        "_order":2,
+        "form":3,
+        "default":"",
+        "required":true,
+        "label":"Subject",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":"Billing, Sales, Support"
+    }
 },
 {
-   "pk":3,
-   "model":"forms.field",
-   "fields":{
-      "field_type":6,
-      "_order":2,
-      "form":3,
-      "default":"",
-      "required":true,
-      "label":"Subject",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":"Billing, Sales, Support"
-   }
+    "pk":4,
+    "model":"forms.field",
+    "fields":{
+        "field_type":2,
+        "_order":3,
+        "form":3,
+        "default":"",
+        "required":true,
+        "label":"Message",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 },
 {
-   "pk":4,
-   "model":"forms.field",
-   "fields":{
-      "field_type":2,
-      "_order":3,
-      "form":3,
-      "default":"",
-      "required":true,
-      "label":"Message",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
+    "pk":5,
+    "model":"forms.field",
+    "fields":{
+        "field_type":14,
+        "_order":4,
+        "form":3,
+        "default":"",
+        "required":false,
+        "label":"Site",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 },
 {
-   "pk":5,
-   "model":"forms.field",
-   "fields":{
-      "field_type":14,
-      "_order":4,
-      "form":3,
-      "default":"",
-      "required":false,
-      "label":"Site",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
+    "pk":6,
+    "model":"forms.field",
+    "fields":{
+        "field_type":9,
+        "_order":5,
+        "form":3,
+        "default":"",
+        "required":false,
+        "label":"File Upload",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 },
 {
-   "pk":6,
-   "model":"forms.field",
-   "fields":{
-      "field_type":9,
-      "_order":5,
-      "form":3,
-      "default":"",
-      "required":false,
-      "label":"File Upload",
-      "visible":true,
-      "help_text":"",
-      "placeholder_text":"",
-      "choices":""
-   }
-},
-{
-   "pk":13,
-   "model":"blog_fork.blogpost",
-   "fields":{
-      "status":2,
-      "expiry_date":null,
-      "allow_comments":true,
-      "description":"<p><img src=\"http://cdn03.cdn.crunktastical.net/wp-content/uploads/2012/06/memphitz11.png\" border=\"0\" width=\"294\" height=\"461\" style=\"float: left; margin: 10px;\" /></p>\r\n\r\n<p>It\u2019s a battle of she said/he said between K. Michelle and Memphitz.</p>\r\n\r\n<p>Last Monday, over one million viewers tuned in for the season premiere of \u2018Love & Hip-Hop: Atlanta\u2019 and watched singer K. Michelle recall tragic details of a abusive relationship with her former producer.</p>\r\n\r\n<p>Although she never revealed her abuser\u2019s name on the show, Twitter went ablaze wondering what industry woman-beater was she referring to.</p>\r\n\r\n<p>Enter the husband of reality star Toya Wright from \u2018Tiny & Toya\u2019 fame (yes, we said fame), who would eventually break his silence later in the week, tweeting \u201cAs I was installing the Teeth, Titties & Ass you\u2019re Flaunting, I forget to tell you about the Growing Nose,\u201d along with an illustration of Pinocchio. Ouch.</p>\r\n\r\n<p>The former A&R for Jive Records spoke out today for what he says will be his one and only interview with TT Torrez on iPower 92.1.</p>",
-      "title":"Copy from crunktastical",
-      "rating_average":0.0,
-      "categories":[
-
-      ],
-      "site":1,
-      "keywords_string":"",
-      "content":"<p><img src=\"http://cdn03.cdn.crunktastical.net/wp-content/uploads/2012/06/memphitz11.png\" border=\"0\" width=\"294\" height=\"461\" style=\"float: left; margin: 10px;\" /></p>\r\n<p>It&rsquo;s a battle of she said/he said between&nbsp;<strong>K. Michelle</strong>&nbsp;and&nbsp;<strong>Memphitz</strong>.</p>\r\n<p>Last Monday, over one million viewers tuned in for the season premiere of<strong>&lsquo;Love &amp; Hip-Hop: Atlanta&rsquo;</strong>&nbsp;and watched singer K. Michelle recall tragic details of a abusive relationship with her former producer.</p>\r\n<p>Although she never revealed her abuser&rsquo;s name on the show, Twitter went ablaze wondering what industry woman-beater was she referring to.</p>\r\n<p>Enter the husband of reality star&nbsp;<strong>Toya Wright</strong>&nbsp;from &lsquo;Tiny &amp; Toya&rsquo; fame (yes, we said fame), who would eventually break his silence later in the week, tweeting &ldquo;As I was installing the Teeth, Titties &amp; Ass you&rsquo;re Flaunting, I forget to tell you about the Growing Nose,&rdquo; along with an illustration of Pinocchio. Ouch.</p>\r\n<p>The former A&amp;R for Jive Records spoke out today for what he says will be his one and only interview with&nbsp;<strong>TT Torrez</strong>&nbsp;on iPower 92.1.</p>\r\n<p>The Memphis native says when he met K. Michelle she had a voice from God and after signing her to a recording contract their relationship blossomed from professional to personal after late night sessions in the studio.</p>\r\n<p>&ldquo;I was very, very fond of K, but I wasn&rsquo;t in love with her like she seemed to be in love with me,&rdquo; he says.&nbsp;He also clarified that the two never lived together.</p>\r\n<p>On the premiere episode, K. Michelle said she had a $2 million contract with Jive Records but the CEO of Do Work Enterprises dismisses her claims.&nbsp;&ldquo;Unless you have a substantial amount of heat on you in the streets, it is far-fetched to say any new artist receives two million dollars on a deal,&rdquo; Memphitz said, adding that her total deal was actually&nbsp;worth $500,000. He also deflected rumors that he used money from her contract to buy personal gifts for himself.</p>\r\n<p><strong>K. Michelle Visits V-103 In Atlanta</strong></p>\r\n<div class=\"gallery galleryid-161731 gallery-columns-4 gallery-size-thumbnail\"><img class=\"img_block\" src=\"http://cdn02.cdn.crunktastical.net/wp-content/uploads/2012/06/radio2-142x200.jpg\" border=\"0\" alt=\"radio2 142x200 Memphitz Confronts K. Michelle Abuse Rumors: &ldquo;I Dont Fight Women&rdquo;\" title=\"K. Michelle And The In 'Love &amp; Hip Hop Atlanta' Cast Visits V-103\" width=\"142\" height=\"200\" style=\"float: left; margin: 5px;\" /><img class=\"img_block\" src=\"http://cdn02.cdn.crunktastical.net/wp-content/uploads/2012/06/radio3-142x200.jpg\" border=\"0\" alt=\"radio3 142x200 Memphitz Confronts K. Michelle Abuse Rumors: &ldquo;I Dont Fight Women&rdquo;\" title=\"K. Michelle And The In 'Love &amp; Hip Hop Atlanta' Cast Visits V-103\" width=\"142\" height=\"200\" style=\"margin: 5px;\" /><img class=\"img_block\" src=\"http://cdn03.cdn.crunktastical.net/wp-content/uploads/2012/06/radio6-142x200.jpg\" border=\"0\" alt=\"radio6 142x200 Memphitz Confronts K. Michelle Abuse Rumors: &ldquo;I Dont Fight Women&rdquo;\" title=\"K. Michelle And The In 'Love &amp; Hip Hop Atlanta' Cast Visits V-103\" width=\"142\" height=\"200\" style=\"margin: 5px;\" /><img class=\"img_block\" src=\"http://cdn04.cdn.crunktastical.net/wp-content/uploads/2012/06/radio5-142x200.jpg\" border=\"0\" alt=\"radio5 142x200 Memphitz Confronts K. Michelle Abuse Rumors: &ldquo;I Dont Fight Women&rdquo;\" title=\"K. Michelle And The In 'Love &amp; Hip Hop Atlanta' Cast Visits V-103\" width=\"142\" height=\"200\" style=\"float: left; margin: 5px;\" /><br /><br /><br /></div>\r\n<p>Memphitz revealed his relationship with the R&amp;B singer took a wrong turn when she showed jealously toward any female artist he worked with and that it&rsquo;s not the first time she has claimed to have been physically abused.&nbsp;&ldquo;She says it whenever she think she has a stage to say it,&rdquo; Memphitz scoffed.</p>\r\n<p><strong>Part One</strong></p>\r\n<p><iframe src=\"http://www.youtube.com/embed/HNCnXycbags\" frameborder=\"0\" width=\"560\" height=\"315\"></iframe></p>\r\n<p>When radio personality T.T. Torrez described an alleged incident where Memphitz put a pillow over K. Michelle&rsquo;s face to prevent her from screaming in a hotel room, he quickly shot back replying, &ldquo;That&rsquo;s my first time hearing that one.&rdquo;</p>\r\n<p>He went on to say after embarrassing him plenty of times in front of business partners, the hotel incident was actually the night he decided to end their relationship.&ldquo;That is last time you embarrass me. I&rsquo;m done,&rdquo; he recalls telling the aspiring singer.&nbsp;He went on to describe&nbsp;K. Michelle going &ldquo;Tasmanian Devil&rdquo; trying to attack him.</p>\r\n<p>&ldquo;Yes, I grabbed her and held her arms down from hitting my ass again and she was screaming. I covered her mouth because she was screaming so loud. All I did was restrain her.&rdquo;</p>\r\n<p>So what does new wife Toya, whom he just shared their one year anniversary with in Paris, think of all this drama?&nbsp;She knows who he really is, according to Memphitz.&nbsp;&ldquo;Different women bring out different things in men because I can&rsquo;t remember being with any girl that I argued with more than K. Michelle. She just would love to argue,&rdquo; he says.</p>\r\n<p>After apologizing for his tweet declaring, &ldquo;I made you,&rdquo; he still took ownership of creating her image.</p>\r\n<p><strong>Part Two</strong></p>\r\n<p><iframe src=\"http://www.youtube.com/embed/wvtxn4pW7Dw\" frameborder=\"0\" width=\"560\" height=\"315\"></iframe></p>\r\n<p>&ldquo;She was abused before, just it wasn&rsquo;t by me. I can&rsquo;t be your muse anymore. You want to argue with me so you can write a hit? You want to try and defame my character so you can get fans? I can&rsquo;t lay down for that one.&rdquo;</p>\r\n<p>He also admitted dating another &lsquo;Love &amp; Hip-Hop: Atlanta&rsquo; cast member,&nbsp;<strong>Ariane</strong>.&nbsp;So, is there a chance that K. Michelle and Memphitz can clear the air?</p>\r\n<p>&ldquo;I&rsquo;m not burying nothing with the devil,&rdquo; he says. &ldquo;I hope she gets help.&rdquo;</p>\r\n<p>Guess not . . .</p>",
-      "rating_count":0,
-      "comments_count":0,
-      "user":1,
-      "upvote":1,
-      "short_url":null,
-      "downvote":0,
-      "publish_date":"2012-06-26T12:59:35Z",
-      "slug":"copy-from-crunktastical",
-      "gen_description":false,
-      "featured_image":"uploads/memphitz11.png"
-   }
+    "pk":7,
+    "model":"forms.field",
+    "fields":{
+        "field_type":9,
+        "_order":0,
+        "form":8,
+        "default":"",
+        "required":true,
+        "label":"File Upload",
+        "visible":true,
+        "help_text":"",
+        "placeholder_text":"",
+        "choices":""
+    }
 }
 ]

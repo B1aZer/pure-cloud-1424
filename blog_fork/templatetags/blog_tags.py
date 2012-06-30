@@ -91,7 +91,7 @@ def blog_downvotes(limit=3):
 
 @register.as_tag
 def blog_blogroll(*args):
-    return Blogroll.objects.get(id=18).link_set.all() 
+    return Blogroll.objects.get(id=9).link_set.all() 
 
 @register.inclusion_tag('blog/includes/poll.html')
 def show_poll(post):
