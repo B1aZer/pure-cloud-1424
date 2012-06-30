@@ -4,13 +4,14 @@ from django.utils.translation import ugettext_lazy as _
 
 from mezzanine.conf import settings
 from mezzanine.core.fields import FileField
-from mezzanine.core.models import Displayable, Ownable, RichText, Slugged
+from mezzanine.core.models import Displayable, Ownable, RichText, Slugged, Orderable
 from mezzanine.generic.fields import CommentsField, RatingField
 from mezzanine.utils.models import AdminThumbMixin
 
 from mezzanine.core.fields import RichTextField
 from django.template.defaultfilters import truncatewords_html
 from mezzanine.utils.html import TagCloser
+from mezzanine.pages.models import Page
 
 class BlogPost(Displayable, Ownable, RichText, AdminThumbMixin):
     """
@@ -96,6 +97,19 @@ class BlogCategory(Slugged):
     @models.permalink
     def get_absolute_url(self):
         return ("blog_post_list_category", (), {"slug": self.slug})
+
+
+class Blogroll(Page):
+    class Meta:
+        verbose_name = _("Blogroll")
+        verbose_name_plural = _("Blogroll")
+
+    dob = models.CharField("Place your links here", max_length=100 )
+
+class Link(Orderable):
+    blogroll = models.ForeignKey("Blogroll")
+    name = models.CharField(max_length=300)
+    url = models.URLField()
 
 
 

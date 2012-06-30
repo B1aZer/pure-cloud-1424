@@ -54,6 +54,18 @@
 </ul>
 {% endif %}  
 
+{% blog_blogroll as blogroll%}
+{% if blogroll %}
+<h3>{% trans "Blogroll" %}</h3>
+<ul class="unstyled">
+{% for roll in blogroll %}
+<li><a href="{{ roll.url }}"
+        >{{ roll.name }}</a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}   
+
 
 {% blog_authors as authors %}
 {% if authors %}

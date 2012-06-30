@@ -166,6 +166,29 @@
     }
 },                
 {
+    "pk":18,
+    "model":"pages.page",
+    "fields":{
+        "status":2,
+        "_order":0,
+        "titles":"BlogRoll",
+        "description":"",
+        "parent":null,
+        "title":"BlogRoll",
+        "in_footer":false,
+        "short_url":null,
+        "login_required":false,
+        "site":1,
+        "keywords_string":"",
+        "expiry_date":null,
+        "content_model":"blogroll",
+        "in_navigation":false,
+        "slug":"BlogRoll",
+        "gen_description":true
+    }
+},                
+
+{
    "pk":1,
    "model":"pages.richtextpage",
    "fields":{
@@ -210,6 +233,13 @@
       "content":"<p>when you need more space and compare the costs of installing a\u00a0<a href=\"http://www.firstfloors.co.uk/mezzanine_floors.html\" title=\"mezzanine floors\">mezzanine floor</a>\u00a0with the various costs associated when moving to larger premises or a bigger unit, then a mezzanine floor will pay for itself in a very short time. installing a mezzanine floor will quickly give you the extra space you need with the minimum of disruption and impact on your business. you may need to inform your landlord of the proposed changes, to make sure you comply with the terms and conditions of your lease. a free-standing mezzanine floor which is not attached to the building structure, will mean that the floor may not normally be subject to any additional rent or rates. first floors can assist you with any building and fire safety regulations.</p>\n<p>we have compiled a set of typical questions asked by our customers when purchasing a mezzanine floor which cover the following areas:</p>\n<ul>\n<li>site surveys and building regulations</li>\n<li>rates and local authorities.</li>\n<li>dealing with your landlords</li>\n<li>fire regulations</li>\n<li>disabled access</li>\n<li>pricing and any other extra costs.</li>\n<li>mezzanine specifications &amp; design ( columns &amp; loading )</li>\n<li>preparation</li>\n<li>impact on your business</li>\n<li>timescales &amp; installation</li>\n</ul>\n<p>q. is a site survey required ?<br><br>a. a site survey is always recommended as it allows a member of our team to discuss in more detail requirements such as staircases, walkways, protected escape routes, loading requirements, reducing the number of columns under your new mezzanine floors. this will allow us to produce the most efficient design and allows us to offer you the best possible price.</p>\n<p>q. will the mezzanine floor require building regulation approval ?<br><br>a. yes. building regulations is required for almost all mezzanine floor installations. first floors will provide calculations , design and drawings to help support your application. we will submit these on your behalf.</p>\n<p>q. will first floors (uk) take responsibility for obtaining building regulations ?<br><br>a. we will be happy to make an application on your behalf. we do not charge for the preparation of drawings and calculations necessary, providing the installation takes place . all we pass on is the statutory fees charged by the local authority or approved building inspector.</p>\n<p>q. can i obtain approval before i commit to placing a mezzanine order with first floors uk.<br><br>a. yes this is possible, but we will require a purchase order for the initial survey, loading calculations and any design and drawings which are needed to submit to the local authority. as stated above we do not charge for gaining building regulations approval, providing the installation takes place. if the installation does not go ahead we would have to charge a nominal fee to cover our costs. this fee, however, would be reimbursed should the installation take place in the future.</p>\n<p>q. can i install the mezzanine floor before i have obtained building regulations approval.<br><br>a. yes, we can commence with your mezzanine project, within 48 hours of submitting the application for building regulations to the local authority.</p>\n<p>q. who makes sure that the mezzanine floor design, manufacture and installation is fully compliant with all building regulations and fire safety standards ?<br><br>a. first floors uk will take responsibility for this.</p>\n<p>q. do i need planning permission when installing a new mezzanine floor.<br><br>a. in almost all cases you will not need planning permission, if it is a fully demountable structure and the changes are internal. you do however require building regulations approval.</p>\n<p>q. what are the size restrictions doe a mezzanine flooring.<br><br>a. building regulations do not limit the size ,shape or height of the new mezzanine floor. the government, has however been trying to control the expansion of retail space in out-of-town developments and has brought in legislation which requires planning permission for floors greater than 200 sq.m. you can however add multiple floors less than 200 sq.m without requiring planning permission</p>\n<p>q. how will a new mezzanine floor affect my business rates ?<br><br>a. when a mezzanine floor is used for storage purposes only then it does not normally attract increased rate. if the new floor is used for office accommodation it sometimes will.</p>"
    }
 },
+{
+    "pk": 18,
+    "model": "blog_fork.blogroll",
+    "fields": {
+        "dob": ""
+    }
+},     
 {
    "pk":1,
    "model":"galleries.galleryimage",

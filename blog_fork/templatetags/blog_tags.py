@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.db.models import Count
 
 from blog_fork.forms import BlogPostForm
-from blog_fork.models import BlogPost, BlogCategory
+from blog_fork.models import BlogPost, BlogCategory, Blogroll
 from mezzanine import template
 
 
@@ -88,6 +88,10 @@ def blog_downvotes(limit=3):
         if dnv > upv:
             downvotes.append(post)
     return downvotes
+
+@register.as_tag
+def blog_blogroll(*args):
+    return Blogroll.objects.get(id=18).link_set.all() 
 
 @register.inclusion_tag('blog/includes/poll.html')
 def show_poll(post):

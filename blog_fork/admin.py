@@ -6,6 +6,9 @@ from django.contrib import admin
 from .models import BlogPost, BlogCategory
 from mezzanine.conf import settings
 from mezzanine.core.admin import DisplayableAdmin, OwnableAdmin
+from mezzanine.core.admin import TabularDynamicInlineAdmin
+from mezzanine.pages.admin import PageAdmin
+from .models import Blogroll, Link
 
 
 blogpost_fieldsets = deepcopy(DisplayableAdmin.fieldsets)
@@ -52,5 +55,15 @@ class BlogCategoryAdmin(admin.ModelAdmin):
         return False
 
 
+
+class LinksInline(TabularDynamicInlineAdmin):
+    model = Link
+
+class BlogrollAdmin(PageAdmin):
+    inlines = (LinksInline,)
+    readonly_fields = ['dob']
+    fieldsets = ((None, {'fields': ('dob',)}),)
+
+admin.site.register(Blogroll, BlogrollAdmin)
 admin.site.register(BlogPost, BlogPostAdmin)
 admin.site.register(BlogCategory, BlogCategoryAdmin)
