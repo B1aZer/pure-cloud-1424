@@ -1,28 +1,28 @@
-
-        <div class="btn-group grades">
-            <button class="btn" id="rockon" ><i class="icon-thumbs-up"></i>UpGrade  <span class="badge badge-success badge_up">{{ up }}</span> </button>
-            <button class="btn" id="rockoff"><i class="icon-thumbs-down"></i>DownGrade  <span class="badge badge-important badge_down">{{ down }}</span> </button>
-            <a class="btn" id="stats_show"><i class="icon-hand-right"></i>Show Results</a>
-        </div>  
-         <div class="well" id="progress-lmuy">
-            {% if sum > 0 %}
-            <div id="pgbar">
-                <div class="progress progress-striped active">
-                    <div class="bar " style="width: {{ proc }}%;">   
-                    </div>
-                </div>
-                <p><span id="ups" style="float:left;">UpGrades: {{proc_up }}%</span> <span id="downs" style="float:right;">DownGrades: {{ proc_down }}%</span> </p>
+<div>
+<span class="btn-group grades">
+    <button class="btn" id="rockon" ><i class="icon-thumbs-up"></i>UpGrade  <span class="badge badge-success badge_up">{{ up }}</span> </button>
+    <button class="btn" id="rockoff"><i class="icon-thumbs-down"></i>DownGrade  <span class="badge badge-important badge_down">{{ down }}</span> </button>
+    <a class="btn" id="stats_show"><i class="icon-hand-right"></i>Show Results</a>
+</span>  
+<span class="well" id="progress-lmuy">
+    {% if sum > 0 %}
+    <div id="pgbar">
+        <div class="progress progress-striped active">
+            <div class="bar " style="width: {{ proc }}%;">   
             </div>
-            {% else %}
-            <p id="no_votes" >No votes here so far</p>
-            <div id="pgbar" style="display:none">
-                <div class="progress progress-striped active">
-                    <div class="bar " style="width: {{ proc }}%;">   
-                    </div>
-                </div>
-                <p></p>
-                <span id="ups" style="float:left;">UpGrades: {{proc_up }}%</span> <span id="downs" style="float:right;">DownGrades: {{ proc_down }}%</span> 
-            </div> 
-            {% endif %}
-        </div>  
-
+        </div>
+        <p><span id="ups" style="float:left;">UpGrades: {{proc_up }}%</span> <span id="downs" style="float:right;">DownGrades: {{ proc_down }}%</span> </p>
+    </div>
+    {% else %}
+    <p id="no_votes" >No votes here so far</p>
+    <div id="pgbar" style="display:none">
+        <div class="progress progress-striped active">
+            <div class="bar " style="width: {{ proc }}%;">   
+            </div>
+        </div>
+        <p></p>
+        <span id="ups" style="float:left;">UpGrades: {{proc_up }}%</span> <span id="downs" style="float:right;">DownGrades: {{ proc_down }}%</span> 
+    </div> 
+    {% endif %}
+</span>  
+</div>
