@@ -11,13 +11,13 @@
 .front_alert {
     margin-top: 15px;
 }
+.spacing {
+    height: 105px
+}
 #progress-lmuy {
     /*margin-left: 191px;*/
-    margin-top: 3px;
+    margin-top: 6px;
     width: 250px;
-    top:254px;
-    position: relative;
-    top: -72px;
     float: right;
 }  
 #progress-lmuy p {
