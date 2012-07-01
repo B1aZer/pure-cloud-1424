@@ -35,11 +35,11 @@
 {% show_poll blog_post %}
 {% endif %}
 
-<!--<p>-->
-<!--{% if blog_post.allow_comments %}(<a href="#comments">{% spaceless %}-->
-<!--{% blocktrans count blog_post.comments_count as comments_count %}1 comment{% plural %}{{ comments_count }} comments{% endblocktrans %}-->
-<!--{% endspaceless %}</a>){% endif %}-->
-<!--</p>-->
+<p>
+{% if blog_post.allow_comments %}(<a href="#comments">{% spaceless %}
+    {% blocktrans count blog_post.comments_count as comments_count %}1 comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
+    {% endspaceless %}</a>){% endif %}
+</p>
 
 {% if blog_post.featured_image %}
 <!--<p><img src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>-->
